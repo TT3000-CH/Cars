@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#07111b">
-<title>Auto Garage V1.7</title>
+<title>Auto Garage V1.8</title>
 <style>
 :root{--bg:#07111b;--panel:#102236;--panel2:#0b1a2a;--ink:#f7f9fc;--muted:#9fb0c4;--yellow:#ffd34e;--cyan:#59d8ff;--green:#57d79e;--red:#ff7672;--line:rgba(255,255,255,.09)}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif}
@@ -41,7 +41,7 @@ button,input{font:inherit}#rotate{display:none;position:fixed;inset:0;z-index:99
 @media(max-height:390px){.lexgrid{grid-auto-rows:128px}.card{height:128px;grid-template-rows:26px 61px 1fr}.nameBand{font-size:10px}.card .logoBox{height:61px}.rewardPhotoBox{height:88px}}
 
 
-/* V1.7: A-Z, 3D showroom and discovery cards */
+/* V1.8: A-Z, 3D showroom and discovery cards */
 .azbar{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding:3px 0 7px;flex:none}.azbar::-webkit-scrollbar{display:none}.azbtn{min-width:28px;height:27px;border:1px solid var(--line);border-radius:9px;background:linear-gradient(180deg,#1a4770,#123251);color:#fff;font-weight:900;font-size:10px}.azbtn.active{background:linear-gradient(180deg,#66dcff,#2285c3);color:#06121e;box-shadow:0 0 14px rgba(89,216,255,.35)}
 .logoBox{position:relative;background:radial-gradient(circle at 35% 22%,#fff 0,#edf4fb 48%,#c8d4df 100%);box-shadow:inset 0 1px 0 #fff,inset 0 -8px 16px rgba(48,75,98,.13),0 7px 15px rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.78)}.logoBox:before{content:"";position:absolute;inset:4px;border-radius:10px;background:linear-gradient(120deg,rgba(255,255,255,.58),transparent 33%,transparent 70%,rgba(41,108,155,.08));pointer-events:none}.logoBox img{position:relative;z-index:1;filter:drop-shadow(0 4px 4px rgba(16,35,52,.24));width:82%!important;height:82%!important;max-width:82%!important;max-height:82%!important}.detailLogo .logoBox{background:radial-gradient(circle at 34% 25%,#fff,#e8f2fa 55%,#aebfce);box-shadow:inset 0 2px 2px white,inset 0 -14px 28px rgba(20,61,91,.15),0 18px 35px rgba(0,0,0,.28)}
 .discovery{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:9px 0}.discoverCard{border:1px solid var(--line);border-radius:12px;background:linear-gradient(145deg,rgba(31,77,113,.4),rgba(12,31,49,.65));padding:8px;min-height:54px}.discoverCard small{display:block;color:#70dfff;font-size:8px;font-weight:900;text-transform:uppercase;letter-spacing:.8px;margin-bottom:3px}.discoverCard b{display:block;font-size:10px;line-height:1.25}.detailInfo{padding-bottom:18px}
@@ -52,7 +52,7 @@ button,input{font:inherit}#rotate{display:none;position:fixed;inset:0;z-index:99
 </style>
 
 <style>
-/* V1.7 Universal Responsive Edition */
+/* V1.8 Universal Responsive Edition */
 :root{
   --content-max:1600px;
   --logo-card-h:72px;
@@ -140,7 +140,7 @@ button,input{font:inherit}#rotate{display:none;position:fixed;inset:0;z-index:99
 
 
 <style>
-/* V1.7 Garage Edition */
+/* V1.8 Garage Edition */
 .garageHall{
   background:
     linear-gradient(90deg,rgba(4,10,16,.9),rgba(10,25,40,.3) 38%,rgba(4,10,16,.72)),
@@ -229,12 +229,39 @@ button,input{font:inherit}#rotate{display:none;position:fixed;inset:0;z-index:99
 }
 </style>
 
+
+<style>
+/* V1.8 detail scrolling + reset */
+.detailInfo{
+  overflow-y:auto!important;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-gutter:stable;
+  padding-right:14px!important;
+}
+.detailInfo::-webkit-scrollbar{width:8px}
+.detailInfo::-webkit-scrollbar-track{background:rgba(255,255,255,.04);border-radius:8px}
+.detailInfo::-webkit-scrollbar-thumb{background:rgba(89,216,255,.34);border-radius:8px}
+.voiceRow{
+  position:sticky;
+  bottom:0;
+  z-index:5;
+  padding:10px 0 2px;
+  background:linear-gradient(180deg,rgba(12,28,45,0),rgba(12,28,45,.96) 28%);
+}
+#resetProgress{border-color:rgba(255,118,114,.35);color:#ffd2d0}
+.confirmDanger{background:#9e3438!important;color:white!important}
+@media(max-height:430px){
+  .detailInfo{padding-bottom:10px!important}
+  .voiceRow{padding-top:7px}
+}
+</style>
+
 </head>
 <body>
-<div id="rotate"><div><div style="font-size:64px;transform:rotate(90deg)">▯</div><h2>Bitte iPhone drehen</h2><p>Auto Garage V1.7 läuft im Querformat.</p></div></div>
+<div id="rotate"><div><div style="font-size:64px;transform:rotate(90deg)">▯</div><h2>Bitte iPhone drehen</h2><p>Auto Garage V1.8 läuft im Querformat.</p></div></div>
 <div id="app">
 <section id="home" class="screen active">
-<div class="top"><div class="brand">AUTO <span>GARAGE</span> <small style="color:var(--muted)">V1.7</small></div><div class="spacer"></div><div class="pill">★ <span id="topPoints">0</span></div></div>
+<div class="top"><div class="brand">AUTO <span>GARAGE</span> <small style="color:var(--muted)">V1.8</small></div><div class="spacer"></div><div class="pill">★ <span id="topPoints">0</span></div></div>
 <div class="home">
 <div class="hero garageHall"><div class="garageSign">AUTO GARAGE ACADEMY</div><div class="eyebrow">128 MARKEN · LOGOS · ENTDECKEN</div><h1>Willkommen<br>in der Garage.</h1><p>Öffne einen Bereich der Werkstatt und starte deine Auto-Mission.</p><div class="actions garageDoors"><button class="cta garageDoorBtn" id="goLex"><span>LEXIKON</span><small>Showroom öffnen</small></button><button class="ghost garageDoorBtn" id="goGames"><span>LERN-GAMES</span><small>Trainingsbox öffnen</small></button></div></div>
 <div class="garage"><div style="display:flex;align-items:center"><strong>Belohnungs-Garage</strong><div class="spacer"></div><button class="garageCollectionBtn" id="openGarageCollection">Meine Sammlung</button><span class="pill">Nächstes Auto bei <span id="nextReward">500</span></span></div><div class="garageView" id="garageView"><img id="rewardPhoto" class="rewardPhoto" alt=""><div class="photoCredit">Foto: Wikimedia Commons</div><div class="tierLabel" id="tierLabel"></div></div><div class="stats"><div class="stat"><b id="learnedN">0</b><small>Marken gelernt</small></div><div class="stat"><b id="rewardN">1</b><small>Garagen-Auto</small></div><div class="stat"><b id="xpN">0 XP</b><small>Erfahrung</small></div></div></div>
@@ -253,7 +280,7 @@ button,input{font:inherit}#rotate{display:none;position:fixed;inset:0;z-index:99
 <div class="fact"><small>Hinweis</small><b>ca. Werte je Version</b></div>
 </div><div class="discovery"><div class="discoverCard"><small>Logo-Geheimnis</small><b id="detailLogoSecret"></b></div><div class="discoverCard"><small>Schon gewusst?</small><b id="detailFun"></b></div><div class="discoverCard"><small>Berühmt für</small><b id="detailFamous"></b></div><div class="discoverCard"><small>Kultauto</small><b id="detailCult"></b></div></div><div class="voiceRow"><button class="cta" id="speak">▶ Natürlich vorlesen</button><button class="cta stop" id="stopSpeak">■ Stop</button><button class="ghost" id="markLearned">Als gelernt markieren</button></div></div></div></section>
 
-<section id="games" class="screen"><div class="top"><button class="back homeBack">‹ Start</button><div class="brand">LERN-<span>GAMES</span></div><div class="spacer"></div><div class="pill">★ <span id="gamePoints">0</span></div></div><div class="bar"><h2>Training</h2><p>Memory: 24 grosse Karten, 12 Logo-Paare im festen 4×6-Feld.</p></div><div class="content games"><button class="tile primary" data-game="logo"><div class="ico">◉</div><strong>Logo-Blitz</strong><small>Logo erkennen</small></button><button class="tile" data-game="country"><div class="ico">⌖</div><strong>Woher?</strong><small>Land zuordnen</small></button><button class="tile" data-game="model"><div class="ico">▰</div><strong>Modell-Check</strong><small>Modell zuordnen</small></button><button class="tile" data-game="memory"><div class="ico">▦</div><strong>Logo-Memory</strong><small>12 Logo-Paare im 4×6-Feld</small></button><button class="tile" data-game="turbo"><div class="ico">⚡</div><strong>Turbo</strong><small>60 Sekunden</small></button><button class="tile truthTile" data-game="truth"><div class="ico">?</div><strong>Wahr oder Auto?</strong><small>Logo-Geheimnisse & verrückte Markenfakten</small></button></div></section>
+<section id="games" class="screen"><div class="top"><button class="back homeBack">‹ Start</button><div class="brand">LERN-<span>GAMES</span></div><div class="spacer"></div><button class="back" id="resetProgress">Fortschritt löschen</button><div class="pill">★ <span id="gamePoints">0</span></div></div><div class="bar"><h2>Training</h2><p>Memory: 24 grosse Karten, 12 Logo-Paare im festen 4×6-Feld.</p></div><div class="content games"><button class="tile primary" data-game="logo"><div class="ico">◉</div><strong>Logo-Blitz</strong><small>Logo erkennen</small></button><button class="tile" data-game="country"><div class="ico">⌖</div><strong>Woher?</strong><small>Land zuordnen</small></button><button class="tile" data-game="model"><div class="ico">▰</div><strong>Modell-Check</strong><small>Modell zuordnen</small></button><button class="tile" data-game="memory"><div class="ico">▦</div><strong>Logo-Memory</strong><small>12 Logo-Paare im 4×6-Feld</small></button><button class="tile" data-game="turbo"><div class="ico">⚡</div><strong>Turbo</strong><small>60 Sekunden</small></button><button class="tile truthTile" data-game="truth"><div class="ico">?</div><strong>Wahr oder Auto?</strong><small>Logo-Geheimnisse & verrückte Markenfakten</small></button></div></section>
 
 <section id="garageCollection" class="screen"><div class="top"><button class="back" id="backGarageCollection">‹ Start</button><div class="brand">MEINE <span>SPEED-GARAGE</span></div><div class="spacer"></div><div class="pill"><span id="garageOwned">1</span> Autos gewonnen</div></div><div class="bar"><h2>Deine freigeschalteten Autos</h2><p>Alle 500 Punkte kommt ein schnelleres Fahrzeug dazu.</p></div><div class="content"><div id="rewardGrid" class="rewardGrid"></div></div></section>
 
@@ -410,7 +437,15 @@ function speak(){
  if(!current||!("speechSynthesis"in window))return;speechSynthesis.cancel();
  const d=discoveryFor(current);const u=new SpeechSynthesisUtterance(`${current.name}. ${current.text} Logo-Geheimnis: ${d[0]} Schon gewusst: ${d[1]} Berühmt ist die Marke für ${d[2]}. Als Kultauto merken wir uns ${d[3]}.`);u.lang="de-CH";u.rate=.9;u.pitch=1.01;const v=bestVoice();if(v)u.voice=v;speechSynthesis.speak(u)
 }
-function stopSpeak(){if("speechSynthesis"in window)speechSynthesis.cancel()}
+function stopSpeak(){
+const resetBtnV18=$("#resetProgress");
+if(resetBtnV18)resetBtnV18.onclick=resetProgressWithConfirm;
+const speakBtnV18=$("#speak");
+if(speakBtnV18)speakBtnV18.onclick=speak;
+const stopBtnV18=$("#stopSpeak");
+if(stopBtnV18)stopBtnV18.onclick=stopSpeak;
+
+if("speechSynthesis"in window)speechSynthesis.cancel()}
 function mark(){if(!current)return;if(!state.learned[current.name]){state.learned[current.name]=true;state.points+=20;state.xp+=20}save();$("#markLearned").textContent="Gelernt ✓"}
 function pick(){const p=BRANDS.filter(b=>state.learned[b.name]);const pool=p.length>=4?p:BRANDS;return pool[Math.floor(Math.random()*pool.length)]}
 function startGame(type){
@@ -482,6 +517,28 @@ function renderGarageCollection(){
  REWARDS.slice(0,owned).forEach((r,i)=>{const card=document.createElement("div");card.className="rewardCard";card.innerHTML=`<div class="rewardPhotoBox"><img><span class="speedBadge">${r.speed}</span></div><div class="rewardBody"><b>${r.name}</b><small>${r.note} · freigeschaltet bei ${i*500} Punkten</small></div>`;g.appendChild(card);rewardPhotoFor(r,card.querySelector("img"))})
 }
 function finish(){if(game.timer)clearInterval(game.timer);modal("CHALLENGE GESCHAFFT",game.type==="memory"?"18 Logo-Paare gefunden":game.score+" richtig","Punkte und Erfahrung wurden gespeichert.")}
+
+function resetProgressWithConfirm(){
+  const ok=confirm("Bist du sicher? Der gesamte Lernfortschritt, alle Punkte, XP und Garagen-Belohnungen werden gelöscht. Dieser Schritt kann nicht rückgängig gemacht werden.");
+  if(!ok)return;
+  stopSpeak();
+  localStorage.removeItem("autoGarage17");
+  localStorage.removeItem("autoGarage16");
+  localStorage.removeItem("autoGarage15");
+  localStorage.removeItem("autoGarage14");
+  localStorage.removeItem("autoGarage13");
+  localStorage.removeItem("autoGarage12");
+  localStorage.removeItem("autoGarage11");
+  localStorage.removeItem("autoGarageV1");
+  state={points:0,xp:0,learned:{},correct:{},rewardSeen:0};
+  BRANDS.forEach(b=>{state.learned[b.name]=false;state.correct[b.name]=0});
+  save();
+  renderLex();
+  renderGarageCollection?.();
+  alert("Fortschritt gelöscht.");
+  show("home");
+}
+
 function modal(e,t,x){$("#mEye").textContent=e;$("#mTitle").textContent=t;$("#mText").textContent=x;$("#modal").classList.add("show")}
 $("#openGarageCollection").onclick=()=>{renderGarageCollection();show("garageCollection")};$("#backGarageCollection").onclick=()=>show("home");
 $("#goLex").onclick=()=>{renderLex();show("lexicon")};$("#goGames").onclick=()=>show("games");$$(".homeBack").forEach(b=>b.onclick=()=>{stopSpeak();show("home")});$("#backLex").onclick=()=>{stopSpeak();renderLex($("#search").value);show("lexicon")};$("#search").oninput=e=>{$$(".azbtn").forEach(x=>x.classList.remove("active"));renderLex(e.target.value)};$("#speak").onclick=speak;$("#stopSpeak").onclick=stopSpeak;$("#markLearned").onclick=mark;$$("[data-game]").forEach(b=>b.onclick=()=>startGame(b.dataset.game));$("#backGames").onclick=()=>{if(game.timer)clearInterval(game.timer);show("games")};$("#mOk").onclick=()=>{$("#modal").classList.remove("show");show("games")};$("#mLex").onclick=()=>{$("#modal").classList.remove("show");renderLex();show("lexicon")};
