@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#07111b">
-<title>Auto Garage V1.5</title>
+<title>Auto Garage V1.7</title>
 <style>
 :root{--bg:#07111b;--panel:#102236;--panel2:#0b1a2a;--ink:#f7f9fc;--muted:#9fb0c4;--yellow:#ffd34e;--cyan:#59d8ff;--green:#57d79e;--red:#ff7672;--line:rgba(255,255,255,.09)}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif}
@@ -41,7 +41,7 @@ button,input{font:inherit}#rotate{display:none;position:fixed;inset:0;z-index:99
 @media(max-height:390px){.lexgrid{grid-auto-rows:128px}.card{height:128px;grid-template-rows:26px 61px 1fr}.nameBand{font-size:10px}.card .logoBox{height:61px}.rewardPhotoBox{height:88px}}
 
 
-/* V1.5: A-Z, 3D showroom and discovery cards */
+/* V1.7: A-Z, 3D showroom and discovery cards */
 .azbar{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding:3px 0 7px;flex:none}.azbar::-webkit-scrollbar{display:none}.azbtn{min-width:28px;height:27px;border:1px solid var(--line);border-radius:9px;background:linear-gradient(180deg,#1a4770,#123251);color:#fff;font-weight:900;font-size:10px}.azbtn.active{background:linear-gradient(180deg,#66dcff,#2285c3);color:#06121e;box-shadow:0 0 14px rgba(89,216,255,.35)}
 .logoBox{position:relative;background:radial-gradient(circle at 35% 22%,#fff 0,#edf4fb 48%,#c8d4df 100%);box-shadow:inset 0 1px 0 #fff,inset 0 -8px 16px rgba(48,75,98,.13),0 7px 15px rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.78)}.logoBox:before{content:"";position:absolute;inset:4px;border-radius:10px;background:linear-gradient(120deg,rgba(255,255,255,.58),transparent 33%,transparent 70%,rgba(41,108,155,.08));pointer-events:none}.logoBox img{position:relative;z-index:1;filter:drop-shadow(0 4px 4px rgba(16,35,52,.24));width:82%!important;height:82%!important;max-width:82%!important;max-height:82%!important}.detailLogo .logoBox{background:radial-gradient(circle at 34% 25%,#fff,#e8f2fa 55%,#aebfce);box-shadow:inset 0 2px 2px white,inset 0 -14px 28px rgba(20,61,91,.15),0 18px 35px rgba(0,0,0,.28)}
 .discovery{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:9px 0}.discoverCard{border:1px solid var(--line);border-radius:12px;background:linear-gradient(145deg,rgba(31,77,113,.4),rgba(12,31,49,.65));padding:8px;min-height:54px}.discoverCard small{display:block;color:#70dfff;font-size:8px;font-weight:900;text-transform:uppercase;letter-spacing:.8px;margin-bottom:3px}.discoverCard b{display:block;font-size:10px;line-height:1.25}.detailInfo{padding-bottom:18px}
@@ -50,14 +50,193 @@ button,input{font:inherit}#rotate{display:none;position:fixed;inset:0;z-index:99
 .card{padding:0!important;overflow:hidden;display:grid;grid-template-rows:31px 1fr 37px;min-width:0}.nameBand{margin:0!important;border-radius:0!important;display:flex!important;align-items:center;padding:0 8px;background:linear-gradient(100deg,#1c75b7,#123b68 75%,#0c2949)!important;font-size:10px!important}.card .logoBox{height:auto!important;margin:7px 8px 5px!important;min-height:0}.cardMeta{padding:0 8px 5px!important;min-height:0!important}.lexgrid{grid-template-columns:repeat(6,minmax(0,1fr))!important;grid-auto-rows:137px}.card small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 @media(max-height:390px){.azbar{padding-bottom:4px}.azbtn{height:23px;min-width:25px}.lexgrid{grid-auto-rows:118px}.card{grid-template-rows:27px 1fr 31px}.discovery{margin:6px 0}.discoverCard{min-height:44px;padding:6px}.discoverCard b{font-size:9px}}
 </style>
+
+<style>
+/* V1.7 Universal Responsive Edition */
+:root{
+  --content-max:1600px;
+  --logo-card-h:72px;
+  --tile-gap:8px;
+}
+#app{max-width:var(--content-max);margin:0 auto}
+.lexgrid{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:var(--tile-gap)}
+.card{min-height:142px}
+.logoBox{height:var(--logo-card-h)}
+.detail{grid-template-columns:minmax(320px,.8fr) minmax(420px,1.2fr)}
+.gamewrap{grid-template-columns:minmax(360px,1fr) minmax(420px,1.05fr)}
+.qcard .logoBox{width:min(72%,420px);height:min(60vh,260px);max-height:none}
+.memoryGrid{grid-template-columns:repeat(6,minmax(0,1fr))!important;grid-template-rows:repeat(6,minmax(0,1fr))!important}
+.mem{min-height:0}
+@media (min-width: 1000px) and (min-height: 700px){
+  :root{--logo-card-h:100px;--tile-gap:12px}
+  #app{padding:18px 22px}
+  .top{height:58px}
+  .bar{height:58px}
+  .brand{font-size:22px}
+  .pill,.back{font-size:15px;padding:10px 15px}
+  .home{gap:18px}
+  .hero,.garage{border-radius:30px}
+  .hero{padding:32px}
+  .hero h1,h1{font-size:64px}
+  .hero p{font-size:18px;max-width:720px}
+  .actions{left:32px;bottom:28px}
+  .cta,.ghost{font-size:17px;padding:14px 20px}
+  .garage{padding:20px}
+  .garageView{border-radius:24px}
+  .car{width:78%}
+  .stat{padding:12px}.stat b{font-size:23px}.stat small{font-size:12px}
+  .bar h2{font-size:24px}.bar p{font-size:15px}
+  .search{width:280px;font-size:16px;padding:11px 14px}
+  .lexgrid{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+  .card{min-height:186px;border-radius:20px;padding:11px}
+  .card b{font-size:16px}
+  .card small{font-size:12px}
+  .done{font-size:10px;padding:5px 8px}
+  .logoBox{border-radius:16px;padding:13px}
+  .detail{gap:18px}
+  .detailLogo,.detailInfo{border-radius:28px;padding:24px}
+  .detailLogo .logoBox{width:88%;height:58%;min-height:300px}
+  .detailInfo h2{font-size:42px}
+  .detailInfo p{font-size:17px;line-height:1.5}
+  .facts{gap:12px;margin:18px 0}
+  .fact{padding:13px}.fact small{font-size:12px}.fact b{font-size:16px}
+  .games{grid-template-columns:repeat(3,1fr);gap:14px}
+  .tile{min-height:150px;border-radius:22px;padding:18px}
+  .tile strong{font-size:20px}.tile small{font-size:13px}.tile .ico{font-size:34px}
+  .gamewrap{gap:16px}
+  .qcard,.answers{border-radius:28px;padding:18px}
+  .qtext{font-size:18px}
+  .qcard .logoBox{width:min(78%,520px);height:min(54vh,360px)}
+  .ans{font-size:18px;border-radius:18px;padding:16px}
+  .memoryGrid{gap:10px!important}
+  .mem{border-radius:17px;padding:9px}
+}
+@media (min-width: 1300px) and (min-height: 800px){
+  :root{--logo-card-h:120px;--tile-gap:14px}
+  #app{padding:22px 28px}
+  .home{grid-template-columns:1.05fr .95fr}
+  .hero h1,h1{font-size:76px}
+  .hero p{font-size:20px}
+  .lexgrid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .card{min-height:215px}
+  .card b{font-size:18px}
+  .detailLogo .logoBox{min-height:380px}
+  .detailInfo h2{font-size:48px}
+  .detailInfo p{font-size:18px}
+  .qcard .logoBox{width:min(80%,620px);height:min(56vh,430px)}
+  .ans{font-size:20px}
+}
+@media (min-width: 1000px) and (orientation:portrait){
+  #rotate{display:none!important}
+  #app{display:block!important}
+  .home{grid-template-columns:1fr}
+  .hero{min-height:48vh}
+  .detail{grid-template-columns:1fr}
+  .gamewrap{grid-template-columns:1fr}
+  .qcard .logoBox{height:300px}
+  .lexgrid{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+}
+</style>
+
+
+<style>
+/* V1.7 Garage Edition */
+.garageHall{
+  background:
+    linear-gradient(90deg,rgba(4,10,16,.9),rgba(10,25,40,.3) 38%,rgba(4,10,16,.72)),
+    repeating-linear-gradient(90deg,#263746 0,#263746 2px,#172533 3px,#172533 72px);
+  border:1px solid rgba(160,205,235,.18)!important;
+  box-shadow:inset 0 0 70px rgba(0,0,0,.55),0 20px 55px rgba(0,0,0,.3);
+}
+.garageHall:before{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:27%;
+  background:linear-gradient(#29333a,#151c21);
+  clip-path:polygon(0 22%,100% 0,100% 100%,0 100%);
+  opacity:.88
+}
+.garageSign{
+  display:inline-block;position:relative;z-index:2;margin-bottom:6px;padding:6px 13px;
+  border:1px solid rgba(89,216,255,.5);border-radius:7px;background:#07131d;
+  color:#8be8ff;font-weight:1000;font-size:11px;letter-spacing:2px;
+  box-shadow:0 0 18px rgba(89,216,255,.25),inset 0 0 10px rgba(89,216,255,.12)
+}
+.garageHall h1,.garageHall p,.garageHall .eyebrow{position:relative;z-index:2}
+.garageDoors{z-index:3;gap:12px}
+.garageDoorBtn{
+  min-width:155px;text-align:left!important;border-radius:10px!important;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.12),0 9px 22px rgba(0,0,0,.28)
+}
+.garageDoorBtn span{display:block;font-weight:1000;font-size:14px;letter-spacing:.4px}
+.garageDoorBtn small{display:block;font-size:9px;margin-top:3px;opacity:.72}
+#goGames.garageDoorBtn{background:linear-gradient(180deg,#1c5b87,#103652);border-color:#357ca8}
+
+.qtext{font-size:17px!important;font-weight:850!important;color:#f4f8fb!important;line-height:1.25;margin-bottom:10px!important}
+.qcard{min-width:0}
+.qcard #qvisual{width:100%;display:flex;align-items:center;justify-content:center;min-height:0}
+.qcard #qvisual>.logoBox{width:min(84%,420px)!important;height:min(58vh,250px)!important;max-height:250px!important;margin:0!important}
+.qcard #qvisual>.logoBox img{width:91%!important;height:91%!important;max-width:91%!important;max-height:91%!important;padding:3px!important}
+
+.gamewrap.memoryMode{grid-template-columns:132px minmax(0,1fr)!important;gap:9px}
+.memoryMode .qcard{padding:9px!important}
+.memoryMode .qtext{font-size:13px!important}
+.memoryMode #qvisual{font-size:12px}
+.memoryGrid{
+  grid-template-columns:repeat(6,minmax(0,1fr))!important;
+  grid-template-rows:repeat(4,minmax(0,1fr))!important;
+  gap:7px!important
+}
+.mem{border-radius:12px!important;padding:5px!important;font-size:20px!important}
+.mem .logoBox{width:100%!important;height:100%!important;margin:0!important;padding:4px 6px!important}
+.mem .logoBox img{width:94%!important;height:94%!important;max-width:94%!important;max-height:94%!important;padding:1px!important}
+.mem.matched{opacity:.28!important}
+
+.card{cursor:pointer;touch-action:manipulation}
+.card>*{pointer-events:none}
+.logoFallback{
+  background:radial-gradient(circle at 35% 28%,#dcecff,#9db7cc 58%,#60798d);
+  color:#102538!important;border:2px solid rgba(22,63,91,.18);
+  font-size:18px!important;font-weight:1000!important;letter-spacing:.5px
+}
+.logoFallback small{font-size:9px!important;color:#344f62!important}
+
+@media(min-width:1000px){
+  .qtext{font-size:24px!important}
+  .qcard #qvisual>.logoBox{width:min(86%,560px)!important;height:min(55vh,390px)!important;max-height:390px!important}
+  .gamewrap.memoryMode{grid-template-columns:190px minmax(0,1fr)!important;gap:15px}
+  .memoryMode .qtext{font-size:18px!important}
+  .memoryGrid{gap:11px!important}
+  .mem{border-radius:17px!important;padding:8px!important}
+  .garageDoorBtn{min-width:220px;padding:17px 20px!important}
+  .garageDoorBtn span{font-size:19px}.garageDoorBtn small{font-size:12px}
+}
+</style>
+
+
+<style>
+.garageZone{
+ background:
+   linear-gradient(rgba(5,14,22,.83),rgba(5,14,22,.91)),
+   repeating-linear-gradient(90deg,#243746 0,#243746 3px,#162633 4px,#162633 84px);
+ border-radius:18px;padding-left:10px;padding-right:10px
+}
+.garageZone .bar{
+ background:linear-gradient(90deg,rgba(14,48,72,.92),rgba(12,31,48,.78));
+ border:1px solid rgba(87,169,216,.16);border-radius:12px;padding:0 12px;margin-bottom:5px
+}
+.garageZone .content{
+ background:linear-gradient(180deg,rgba(20,29,35,.62),rgba(7,14,20,.68));
+ border:1px solid rgba(255,255,255,.06);padding:8px
+}
+</style>
+
 </head>
 <body>
-<div id="rotate"><div><div style="font-size:64px;transform:rotate(90deg)">▯</div><h2>Bitte iPhone drehen</h2><p>Auto Garage V1.5 läuft im Querformat.</p></div></div>
+<div id="rotate"><div><div style="font-size:64px;transform:rotate(90deg)">▯</div><h2>Bitte iPhone drehen</h2><p>Auto Garage V1.7 läuft im Querformat.</p></div></div>
 <div id="app">
 <section id="home" class="screen active">
-<div class="top"><div class="brand">AUTO <span>GARAGE</span> <small style="color:var(--muted)">V1.5</small></div><div class="spacer"></div><div class="pill">★ <span id="topPoints">0</span></div></div>
+<div class="top"><div class="brand">AUTO <span>GARAGE</span> <small style="color:var(--muted)">V1.7</small></div><div class="spacer"></div><div class="pill">★ <span id="topPoints">0</span></div></div>
 <div class="home">
-<div class="hero"><div class="eyebrow">128 MARKEN · LOGOS · ENTDECKEN</div><h1>Mehr Marken.<br>Mehr Garage.</h1><p>Entdecke 128 eindeutige Marken – von Klassikern bis zu Hypercars, Exoten und neuen Elektroherstellern.</p><div class="actions"><button class="cta" id="goLex">Lexikon</button><button class="ghost" id="goGames">Lernspiele</button></div></div>
+<div class="hero garageHall"><div class="garageSign">AUTO GARAGE ACADEMY</div><div class="eyebrow">128 MARKEN · LOGOS · ENTDECKEN</div><h1>Willkommen<br>in der Garage.</h1><p>Öffne einen Bereich der Werkstatt und starte deine Auto-Mission.</p><div class="actions garageDoors"><button class="cta garageDoorBtn" id="goLex"><span>LEXIKON</span><small>Showroom öffnen</small></button><button class="ghost garageDoorBtn" id="goGames"><span>LERN-GAMES</span><small>Trainingsbox öffnen</small></button></div></div>
 <div class="garage"><div style="display:flex;align-items:center"><strong>Belohnungs-Garage</strong><div class="spacer"></div><button class="garageCollectionBtn" id="openGarageCollection">Meine Sammlung</button><span class="pill">Nächstes Auto bei <span id="nextReward">500</span></span></div><div class="garageView" id="garageView"><img id="rewardPhoto" class="rewardPhoto" alt=""><div class="photoCredit">Foto: Wikimedia Commons</div><div class="tierLabel" id="tierLabel"></div></div><div class="stats"><div class="stat"><b id="learnedN">0</b><small>Marken gelernt</small></div><div class="stat"><b id="rewardN">1</b><small>Garagen-Auto</small></div><div class="stat"><b id="xpN">0 XP</b><small>Erfahrung</small></div></div></div>
 </div></section>
 
@@ -74,7 +253,7 @@ button,input{font:inherit}#rotate{display:none;position:fixed;inset:0;z-index:99
 <div class="fact"><small>Hinweis</small><b>ca. Werte je Version</b></div>
 </div><div class="discovery"><div class="discoverCard"><small>Logo-Geheimnis</small><b id="detailLogoSecret"></b></div><div class="discoverCard"><small>Schon gewusst?</small><b id="detailFun"></b></div><div class="discoverCard"><small>Berühmt für</small><b id="detailFamous"></b></div><div class="discoverCard"><small>Kultauto</small><b id="detailCult"></b></div></div><div class="voiceRow"><button class="cta" id="speak">▶ Natürlich vorlesen</button><button class="cta stop" id="stopSpeak">■ Stop</button><button class="ghost" id="markLearned">Als gelernt markieren</button></div></div></div></section>
 
-<section id="games" class="screen"><div class="top"><button class="back homeBack">‹ Start</button><div class="brand">LERN-<span>GAMES</span></div><div class="spacer"></div><div class="pill">★ <span id="gamePoints">0</span></div></div><div class="bar"><h2>Training</h2><p>Memory: 36 Karten, 18 Logo-Paare im festen 6×6-Feld.</p></div><div class="content games"><button class="tile primary" data-game="logo"><div class="ico">◉</div><strong>Logo-Blitz</strong><small>Logo erkennen</small></button><button class="tile" data-game="country"><div class="ico">⌖</div><strong>Woher?</strong><small>Land zuordnen</small></button><button class="tile" data-game="model"><div class="ico">▰</div><strong>Modell-Check</strong><small>Modell zuordnen</small></button><button class="tile" data-game="memory"><div class="ico">▦</div><strong>Logo-Memory</strong><small>18 Logo-Paare im 6×6-Feld</small></button><button class="tile" data-game="turbo"><div class="ico">⚡</div><strong>Turbo</strong><small>60 Sekunden</small></button><button class="tile truthTile" data-game="truth"><div class="ico">?</div><strong>Wahr oder Auto?</strong><small>Logo-Geheimnisse & verrückte Markenfakten</small></button></div></section>
+<section id="games" class="screen"><div class="top"><button class="back homeBack">‹ Start</button><div class="brand">LERN-<span>GAMES</span></div><div class="spacer"></div><div class="pill">★ <span id="gamePoints">0</span></div></div><div class="bar"><h2>Training</h2><p>Memory: 24 grosse Karten, 12 Logo-Paare im festen 4×6-Feld.</p></div><div class="content games"><button class="tile primary" data-game="logo"><div class="ico">◉</div><strong>Logo-Blitz</strong><small>Logo erkennen</small></button><button class="tile" data-game="country"><div class="ico">⌖</div><strong>Woher?</strong><small>Land zuordnen</small></button><button class="tile" data-game="model"><div class="ico">▰</div><strong>Modell-Check</strong><small>Modell zuordnen</small></button><button class="tile" data-game="memory"><div class="ico">▦</div><strong>Logo-Memory</strong><small>12 Logo-Paare im 4×6-Feld</small></button><button class="tile" data-game="turbo"><div class="ico">⚡</div><strong>Turbo</strong><small>60 Sekunden</small></button><button class="tile truthTile" data-game="truth"><div class="ico">?</div><strong>Wahr oder Auto?</strong><small>Logo-Geheimnisse & verrückte Markenfakten</small></button></div></section>
 
 <section id="garageCollection" class="screen"><div class="top"><button class="back" id="backGarageCollection">‹ Start</button><div class="brand">MEINE <span>SPEED-GARAGE</span></div><div class="spacer"></div><div class="pill"><span id="garageOwned">1</span> Autos gewonnen</div></div><div class="bar"><h2>Deine freigeschalteten Autos</h2><p>Alle 500 Punkte kommt ein schnelleres Fahrzeug dazu.</p></div><div class="content"><div id="rewardGrid" class="rewardGrid"></div></div></section>
 
@@ -128,13 +307,33 @@ function commonsSearch(query,kind="photo"){
 }
 const LOGO_SLUG={"DS Automobiles":"dsautomobiles","Lynk & Co":"lynkandco","GWM":"greatwallmotor","INEOS":"ineos","KGM":"kgmobility","Rolls-Royce":"rollsroyce","Alfa Romeo":"alfaromeo","Land Rover":"landrover","Aston Martin":"astonmartin","Mercedes-Benz":"mercedes","Mercedes-AMG":"mercedesamg"};
 const OFFICIAL_DOMAINS={"Buick":"buick.com","Peugeot":"peugeot.com","Honda":"honda.com","KGM":"kg-mobility.com","TVR":"tvr.co.uk","Hongqi":"hongqi-auto.com","Leapmotor":"leapmotor.com","GWM":"gwm-global.com","Lynk & Co":"lynkco.com","INEOS":"ineosgrenadier.com"};
-function logoUrls(b){const si=LOGO_SLUG[b.name]||b.slug;const out=[SI+si+".svg",CBL+b.slug+"-logo.svg"];if(OFFICIAL_DOMAINS[b.name])out.push("https://www.google.com/s2/favicons?sz=256&domain_url=https://"+OFFICIAL_DOMAINS[b.name]);return out}
+const CURATED_LOGOS={
+ "BMW":"https://commons.wikimedia.org/wiki/Special:Redirect/file/BMW.svg",
+ "Buick":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Buick-logo.svg",
+ "Datsun":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Datsun_1976_logo.svg",
+ "Honda":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Honda%20Logo.svg",
+ "Peugeot":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Peugeot%20Logo.svg",
+ "Nissan":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Nissan_logo.svg"
+};
+function logoUrls(b){
+ const si=LOGO_SLUG[b.name]||b.slug;
+ const out=[];
+ if(CURATED_LOGOS[b.name])out.push(CURATED_LOGOS[b.name]);
+ out.push(CBL+b.slug+"-logo.svg");
+ if(OFFICIAL_DOMAINS[b.name])out.push("https://www.google.com/s2/favicons?sz=256&domain_url=https://"+OFFICIAL_DOMAINS[b.name]);
+ out.push(SI+si+".svg");
+ return [...new Set(out)]
+}
 function setLogo(img,b){
  const u=logoUrls(b);let i=0;
- img.onerror=()=>{i++;if(i<u.length){img.src=u[i]}else{img.onerror=null;commonsSearch(b.name,"logo").then(x=>{if(x)img.src=x;else logoText(img,b)})}};
+ img.onerror=()=>{
+   i++;
+   if(i<u.length){img.src=u[i]}
+   else{img.onerror=null;logoText(img,b)}
+ };
  img.src=u[0];img.alt=b.name+" Logo";
 }
-function logoText(img,b){const box=img.parentElement;if(box){img.remove();box.innerHTML=`<div class="logoFallback">${b.name}<br><small>Markenlogo</small></div>`}}
+function logoText(img,b){const box=img.parentElement;if(box){img.remove();const initials=b.name.split(/\s|-/).map(x=>x[0]).join("").slice(0,3).toUpperCase();box.innerHTML=`<div class="logoFallback">${initials}</div>`}}
 function logoHTML(b){return `<div class="logoBox"><img data-brand="${b.name.replaceAll('"','&quot;')}" alt="${b.name} Logo"></div>`}
 function hydrate(root=document){root.querySelectorAll("img[data-brand]").forEach(img=>{const b=BRANDS.find(x=>x.name===img.dataset.brand);if(b)setLogo(img,b)})}
 function hud(){
@@ -184,9 +383,22 @@ function checkReward(){
 }
 function renderLex(f="",letter=""){
  const g=$("#lexgrid");g.innerHTML="";
- BRANDS.filter(b=>b.name.toLowerCase().includes(f.toLowerCase())&&(!letter||b.name.normalize("NFD").replace(/[\u0300-\u036f]/g,"")[0].toUpperCase()===letter)).sort((a,b)=>a.name.localeCompare(b.name,"de")).forEach(b=>{const c=document.createElement("button");c.className="card";c.innerHTML=`<div class="nameBand">${b.name}</div>`+logoHTML(b)+`<div class="cardMeta"><small>${b.flag} ${b.country}</small><small>${b.model}</small>${state.learned[b.name]?'<span class="done">Gelernt ✓</span>':''}</div>`;c.onclick=()=>openDetail(b);g.appendChild(c)});
+ BRANDS.filter(b=>b.name.toLowerCase().includes(f.toLowerCase())&&(!letter||b.name.normalize("NFD").replace(/[\u0300-\u036f]/g,"")[0].toUpperCase()===letter))
+ .sort((a,b)=>a.name.localeCompare(b.name,"de"))
+ .forEach(b=>{
+   const c=document.createElement("button");
+   c.type="button";c.className="card";c.dataset.brandName=b.name;
+   c.innerHTML=`<div class="nameBand">${b.name}</div>`+logoHTML(b)+`<div class="cardMeta"><small>${b.flag} ${b.country}</small><small>${b.model}</small>${state.learned[b.name]?'<span class="done">Gelernt ✓</span>':''}</div>`;
+   g.appendChild(c)
+ });
  hydrate(g)
 }
+$("#lexgrid").addEventListener("click",e=>{
+ const card=e.target.closest(".card");
+ if(!card)return;
+ const b=BRANDS.find(x=>x.name===card.dataset.brandName);
+ if(b)openDetail(b)
+});
 function openDetail(b){
  current=b;setLogo($("#detailImg"),b);$("#detailFlag").textContent=b.flag+" "+b.country;$("#detailName").textContent=b.name;$("#detailText").textContent=b.text;$("#detailCountry").textContent=b.country;$("#detailModel").textContent=b.model;$("#detailYear").textContent=b.year;$("#detailPS").textContent=b.ps+" PS";$("#detailVmax").textContent=b.vmax;$("#detailLength").textContent=b.length;$("#detailPrice").textContent=b.price;const d=discoveryFor(b);$("#detailLogoSecret").textContent=d[0];$("#detailFun").textContent=d[1];$("#detailFamous").textContent=d[2];$("#detailCult").textContent=d[3];$("#markLearned").textContent=state.learned[b.name]?"Gelernt ✓":"Als gelernt markieren";show("detail")
 }
@@ -202,6 +414,7 @@ function stopSpeak(){if("speechSynthesis"in window)speechSynthesis.cancel()}
 function mark(){if(!current)return;if(!state.learned[current.name]){state.learned[current.name]=true;state.points+=20;state.xp+=20}save();$("#markLearned").textContent="Gelernt ✓"}
 function pick(){const p=BRANDS.filter(b=>state.learned[b.name]);const pool=p.length>=4?p:BRANDS;return pool[Math.floor(Math.random()*pool.length)]}
 function startGame(type){
+ document.querySelector(".gamewrap").classList.remove("memoryMode");
  stopSpeak();game={type,round:0,total:type==="turbo"?999:10,score:0,brand:null,timer:null,time:60};show("game");$("#gameName").textContent={logo:"Logo-Blitz",country:"Woher?",model:"Modell-Check",memory:"Logo-Memory 6×6",turbo:"Turbo",truth:"Wahr oder Auto?"}[type];$("#gscore").textContent=0;
  if(type==="memory")return startMemory();if(type==="truth")return nextTruth();if(type==="turbo")game.timer=setInterval(()=>{game.time--;if(game.time<=0){clearInterval(game.timer);finish()}},1000);nextQ()
 }
@@ -224,54 +437,40 @@ function drawAnswers(opts,correct){
  opts.forEach(v=>{const b=document.createElement("button");b.className="ans";b.textContent=v;b.onclick=()=>{if(locked)return;locked=true;if(v===correct){b.classList.add("ok");game.score++;state.points+=25;state.xp+=5;state.correct[game.brand.name]++;$("#gscore").textContent=game.score}else{b.classList.add("bad");[...a.children].forEach(x=>{if(x.textContent===correct)x.classList.add("ok")})}save();setTimeout(()=>game.type==="truth"?nextTruth():nextQ(),650)};a.appendChild(b)})
 }
 function startMemory(){
+ document.querySelector(".gamewrap").classList.add("memoryMode");
  const learned=BRANDS.filter(b=>state.learned[b.name]);
- const pool=learned.length>=18?learned:BRANDS;
- const eighteen=shuffle(pool).slice(0,18);
- const cards=shuffle(eighteen.flatMap(b=>[b,b]));
- $("#qtext").textContent="Finde 18 gleiche Logo-Paare";
- $("#qvisual").innerHTML="<div style='font-size:46px;font-weight:1000'>0/18</div><div style='font-size:10px;color:var(--muted)'>36 Karten</div>";
+ const pool=learned.length>=12?learned:BRANDS;
+ const twelve=shuffle(pool).slice(0,12);
+ const cards=shuffle(twelve.flatMap(b=>[b,b]));
+ $("#qtext").textContent="Logo-Memory";
+ $("#qvisual").innerHTML="<div><div style='font-size:34px;font-weight:1000'>0/12</div><div style='font-size:9px;color:var(--muted)'>Paare</div></div>";
  const a=$("#answers");
  a.className="answers memoryGrid";
  a.innerHTML="";
  let open=[],pairs=0;
  cards.forEach(br=>{
    const btn=document.createElement("button");
-   btn.className="mem";
-   btn.innerHTML="?";
+   btn.className="mem";btn.innerHTML="?";
    btn.onclick=()=>{
      if(btn.classList.contains("matched")||btn.classList.contains("open")||open.length===2)return;
-     btn.classList.add("open");
-     btn.innerHTML=logoHTML(br);
-     hydrate(btn);
-     open.push({btn,br});
+     btn.classList.add("open");btn.innerHTML=logoHTML(br);hydrate(btn);open.push({btn,br});
      if(open.length===2){
        const [x,y]=open;
        if(x.br.name===y.br.name){
          setTimeout(()=>{
-           x.btn.classList.add("matched");
-           y.btn.classList.add("matched");
-           pairs++;
-           state.points+=25;
-           state.xp+=4;
-           state.correct[br.name]++;
-           $("#qvisual").innerHTML=`<div style='font-size:46px;font-weight:1000'>${pairs}/18</div><div style='font-size:10px;color:var(--muted)'>36 Karten</div>`;
-           save();
-           open=[];
-           if(pairs===18)setTimeout(finish,450);
-         },220);
+           x.btn.classList.add("matched");y.btn.classList.add("matched");pairs++;
+           state.points+=25;state.xp+=4;state.correct[br.name]++;
+           $("#qvisual").innerHTML=`<div><div style='font-size:34px;font-weight:1000'>${pairs}/12</div><div style='font-size:9px;color:var(--muted)'>Paare</div></div>`;
+           save();open=[];
+           if(pairs===12)setTimeout(finish,450);
+         },220)
        }else{
-         setTimeout(()=>{
-           open.forEach(o=>{
-             o.btn.classList.remove("open");
-             o.btn.innerHTML="?";
-           });
-           open=[];
-         },600);
+         setTimeout(()=>{open.forEach(o=>{o.btn.classList.remove("open");o.btn.innerHTML="?"});open=[]},600)
        }
      }
    };
-   a.appendChild(btn);
- });
+   a.appendChild(btn)
+ })
 }
 
 function rewardPhotoFor(r,img){
