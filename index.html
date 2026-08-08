@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#07111b">
-<title>Auto Garage V1.8</title>
+<title>Auto Garage V2.0</title>
 <style>
 :root{--bg:#07111b;--panel:#102236;--panel2:#0b1a2a;--ink:#f7f9fc;--muted:#9fb0c4;--yellow:#ffd34e;--cyan:#59d8ff;--green:#57d79e;--red:#ff7672;--line:rgba(255,255,255,.09)}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif}
@@ -41,7 +41,7 @@ button,input{font:inherit}#rotate{display:none;position:fixed;inset:0;z-index:99
 @media(max-height:390px){.lexgrid{grid-auto-rows:128px}.card{height:128px;grid-template-rows:26px 61px 1fr}.nameBand{font-size:10px}.card .logoBox{height:61px}.rewardPhotoBox{height:88px}}
 
 
-/* V1.8: A-Z, 3D showroom and discovery cards */
+/* V2.0: A-Z, 3D showroom and discovery cards */
 .azbar{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding:3px 0 7px;flex:none}.azbar::-webkit-scrollbar{display:none}.azbtn{min-width:28px;height:27px;border:1px solid var(--line);border-radius:9px;background:linear-gradient(180deg,#1a4770,#123251);color:#fff;font-weight:900;font-size:10px}.azbtn.active{background:linear-gradient(180deg,#66dcff,#2285c3);color:#06121e;box-shadow:0 0 14px rgba(89,216,255,.35)}
 .logoBox{position:relative;background:radial-gradient(circle at 35% 22%,#fff 0,#edf4fb 48%,#c8d4df 100%);box-shadow:inset 0 1px 0 #fff,inset 0 -8px 16px rgba(48,75,98,.13),0 7px 15px rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.78)}.logoBox:before{content:"";position:absolute;inset:4px;border-radius:10px;background:linear-gradient(120deg,rgba(255,255,255,.58),transparent 33%,transparent 70%,rgba(41,108,155,.08));pointer-events:none}.logoBox img{position:relative;z-index:1;filter:drop-shadow(0 4px 4px rgba(16,35,52,.24));width:82%!important;height:82%!important;max-width:82%!important;max-height:82%!important}.detailLogo .logoBox{background:radial-gradient(circle at 34% 25%,#fff,#e8f2fa 55%,#aebfce);box-shadow:inset 0 2px 2px white,inset 0 -14px 28px rgba(20,61,91,.15),0 18px 35px rgba(0,0,0,.28)}
 .discovery{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:9px 0}.discoverCard{border:1px solid var(--line);border-radius:12px;background:linear-gradient(145deg,rgba(31,77,113,.4),rgba(12,31,49,.65));padding:8px;min-height:54px}.discoverCard small{display:block;color:#70dfff;font-size:8px;font-weight:900;text-transform:uppercase;letter-spacing:.8px;margin-bottom:3px}.discoverCard b{display:block;font-size:10px;line-height:1.25}.detailInfo{padding-bottom:18px}
@@ -52,7 +52,7 @@ button,input{font:inherit}#rotate{display:none;position:fixed;inset:0;z-index:99
 </style>
 
 <style>
-/* V1.8 Universal Responsive Edition */
+/* V2.0 Universal Responsive Edition */
 :root{
   --content-max:1600px;
   --logo-card-h:72px;
@@ -140,7 +140,7 @@ button,input{font:inherit}#rotate{display:none;position:fixed;inset:0;z-index:99
 
 
 <style>
-/* V1.8 Garage Edition */
+/* V2.0 Garage Edition */
 .garageHall{
   background:
     linear-gradient(90deg,rgba(4,10,16,.9),rgba(10,25,40,.3) 38%,rgba(4,10,16,.72)),
@@ -231,7 +231,7 @@ button,input{font:inherit}#rotate{display:none;position:fixed;inset:0;z-index:99
 
 
 <style>
-/* V1.8 detail scrolling + reset */
+/* V2.0 detail scrolling + reset */
 .detailInfo{
   overflow-y:auto!important;
   -webkit-overflow-scrolling:touch;
@@ -256,20 +256,47 @@ button,input{font:inherit}#rotate{display:none;position:fixed;inset:0;z-index:99
 }
 </style>
 
+
+<style>
+/* V2.0 Robust Edition */
+.speakIcon{
+ width:36px;height:36px;border-radius:50%;border:1px solid rgba(89,216,255,.35);
+ background:linear-gradient(180deg,#174f77,#0d2e47);color:#fff;font-weight:1000;
+ display:grid;place-items:center;box-shadow:0 5px 15px rgba(0,0,0,.25)
+}
+.speakIcon.speaking{background:linear-gradient(180deg,#a43a3e,#6f2226);border-color:rgba(255,118,114,.5)}
+.wordmarkFallback{
+ width:88%;height:72%;display:flex;align-items:center;justify-content:center;text-align:center;
+ padding:8px;border-radius:12px;background:linear-gradient(145deg,#f8fbff,#d8e5ef);
+ border:1px solid #b4c7d5;color:#0e3c62;font-weight:1000;font-size:clamp(12px,1.7vw,20px);
+ letter-spacing:.4px;line-height:1.05;box-shadow:inset 0 1px 0 white,0 5px 12px rgba(0,0,0,.12)
+}
+.rewardProgressWrap{padding:0 2px}
+.rewardProgressText{display:flex;justify-content:space-between;font-size:9px;color:var(--muted);margin-bottom:4px}
+.rewardProgress{height:7px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;border:1px solid rgba(255,255,255,.05)}
+.rewardProgress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#56d99f,#ffd34e);border-radius:999px;transition:width .25s}
+.card{position:relative;isolation:isolate}
+.card:after{content:"";position:absolute;inset:0;z-index:8}
+.card .nameBand,.card .logoBox,.card .cardMeta{position:relative;z-index:1}
+.detailInfo{overscroll-behavior:contain}
+@media(min-width:1000px){.speakIcon{width:44px;height:44px;font-size:18px}.rewardProgressText{font-size:12px}.rewardProgress{height:9px}}
+</style>
+
 </head>
 <body>
-<div id="rotate"><div><div style="font-size:64px;transform:rotate(90deg)">▯</div><h2>Bitte iPhone drehen</h2><p>Auto Garage V1.8 läuft im Querformat.</p></div></div>
+<div id="rotate"><div><div style="font-size:64px;transform:rotate(90deg)">▯</div><h2>Bitte iPhone drehen</h2><p>Auto Garage V2.0 läuft im Querformat.</p></div></div>
 <div id="app">
 <section id="home" class="screen active">
-<div class="top"><div class="brand">AUTO <span>GARAGE</span> <small style="color:var(--muted)">V1.8</small></div><div class="spacer"></div><div class="pill">★ <span id="topPoints">0</span></div></div>
+<div class="top"><div class="brand">AUTO <span>GARAGE</span> <small style="color:var(--muted)">V2.0</small></div><div class="spacer"></div><div class="pill">★ <span id="topPoints">0</span></div></div>
 <div class="home">
 <div class="hero garageHall"><div class="garageSign">AUTO GARAGE ACADEMY</div><div class="eyebrow">128 MARKEN · LOGOS · ENTDECKEN</div><h1>Willkommen<br>in der Garage.</h1><p>Öffne einen Bereich der Werkstatt und starte deine Auto-Mission.</p><div class="actions garageDoors"><button class="cta garageDoorBtn" id="goLex"><span>LEXIKON</span><small>Showroom öffnen</small></button><button class="ghost garageDoorBtn" id="goGames"><span>LERN-GAMES</span><small>Trainingsbox öffnen</small></button></div></div>
-<div class="garage"><div style="display:flex;align-items:center"><strong>Belohnungs-Garage</strong><div class="spacer"></div><button class="garageCollectionBtn" id="openGarageCollection">Meine Sammlung</button><span class="pill">Nächstes Auto bei <span id="nextReward">500</span></span></div><div class="garageView" id="garageView"><img id="rewardPhoto" class="rewardPhoto" alt=""><div class="photoCredit">Foto: Wikimedia Commons</div><div class="tierLabel" id="tierLabel"></div></div><div class="stats"><div class="stat"><b id="learnedN">0</b><small>Marken gelernt</small></div><div class="stat"><b id="rewardN">1</b><small>Garagen-Auto</small></div><div class="stat"><b id="xpN">0 XP</b><small>Erfahrung</small></div></div></div>
+<div class="garage"><div style="display:flex;align-items:center"><strong>Belohnungs-Garage</strong><div class="spacer"></div><button class="garageCollectionBtn" id="openGarageCollection">Meine Sammlung</button><span class="pill"><span id="rewardLevelNow">1</span>/<span id="rewardLevelTotal">11</span> Stufen</span></div><div class="garageView" id="garageView"><img id="rewardPhoto" class="rewardPhoto" alt=""><div class="photoCredit">Foto: Wikimedia Commons</div><div class="tierLabel" id="tierLabel"></div></div><div class="rewardProgressWrap"><div class="rewardProgressText"><span id="rewardProgressText">0 / 500 Punkte</span><span id="nextRewardText">Nächstes Auto bei 500</span></div><div class="rewardProgress"><i id="rewardProgressBar"></i></div></div>
+<div class="stats"><div class="stat"><b id="learnedN">0</b><small>Marken gelernt</small></div><div class="stat"><b id="rewardN">1/11</b><small>Belohnungsstufen</small></div><div class="stat"><b id="xpN">0 XP</b><small>Erfahrung</small></div></div></div>
 </div></section>
 
 <section id="lexicon" class="screen"><div class="top"><button class="back homeBack">‹ Start</button><div class="brand">MARKEN-<span>LEXIKON</span></div><div class="spacer"></div><div class="pill"><span id="lexCount">0</span>/128 gelernt</div></div><div class="bar"><h2>Automarken entdecken</h2><p>Tippe auf Logo oder Namen.</p><input id="search" class="search" placeholder="Marke suchen…"></div><div class="azbar" id="azbar"></div><div class="content"><div class="lexgrid" id="lexgrid"></div></div></section>
 
-<section id="detail" class="screen"><div class="top"><button class="back" id="backLex">‹ Lexikon</button><div class="brand">MARKEN-<span>DETAIL</span></div><div class="spacer"></div></div><div class="detail"><div class="detailLogo"><div class="logoBox"><img id="detailImg"></div><div class="eyebrow" id="detailFlag"></div></div><div class="detailInfo"><div class="eyebrow">AUTOMARKE</div><h2 id="detailName"></h2><p id="detailText"></p><div class="facts" style="grid-template-columns:repeat(4,1fr)">
+<section id="detail" class="screen"><div class="top"><button class="back" id="backLex">‹ Lexikon</button><div class="brand">MARKEN-<span>DETAIL</span></div><div class="spacer"></div><button class="speakIcon" id="speakToggle" aria-label="Vorlesen starten oder stoppen" title="Vorlesen">▶</button></div><div class="detail"><div class="detailLogo"><div class="logoBox"><img id="detailImg"></div><div class="eyebrow" id="detailFlag"></div></div><div class="detailInfo"><div class="eyebrow">AUTOMARKE</div><h2 id="detailName"></h2><p id="detailText"></p><div class="facts" style="grid-template-columns:repeat(4,1fr)">
 <div class="fact"><small>Herkunft</small><b id="detailCountry"></b></div>
 <div class="fact"><small>Beispielmodell</small><b id="detailModel"></b></div>
 <div class="fact"><small>Leistung</small><b id="detailPS"></b></div>
@@ -278,7 +305,7 @@ button,input{font:inherit}#rotate{display:none;position:fixed;inset:0;z-index:99
 <div class="fact"><small>Preis / Wert</small><b id="detailPrice"></b></div>
 <div class="fact"><small>Gegründet</small><b id="detailYear"></b></div>
 <div class="fact"><small>Hinweis</small><b>ca. Werte je Version</b></div>
-</div><div class="discovery"><div class="discoverCard"><small>Logo-Geheimnis</small><b id="detailLogoSecret"></b></div><div class="discoverCard"><small>Schon gewusst?</small><b id="detailFun"></b></div><div class="discoverCard"><small>Berühmt für</small><b id="detailFamous"></b></div><div class="discoverCard"><small>Kultauto</small><b id="detailCult"></b></div></div><div class="voiceRow"><button class="cta" id="speak">▶ Natürlich vorlesen</button><button class="cta stop" id="stopSpeak">■ Stop</button><button class="ghost" id="markLearned">Als gelernt markieren</button></div></div></div></section>
+</div><div class="discovery"><div class="discoverCard"><small>Logo-Geheimnis</small><b id="detailLogoSecret"></b></div><div class="discoverCard"><small>Schon gewusst?</small><b id="detailFun"></b></div><div class="discoverCard"><small>Berühmt für</small><b id="detailFamous"></b></div><div class="discoverCard"><small>Kultauto</small><b id="detailCult"></b></div></div><div class="voiceRow"><button class="ghost" id="markLearned">Als gelernt markieren</button></div></div></div></section>
 
 <section id="games" class="screen"><div class="top"><button class="back homeBack">‹ Start</button><div class="brand">LERN-<span>GAMES</span></div><div class="spacer"></div><button class="back" id="resetProgress">Fortschritt löschen</button><div class="pill">★ <span id="gamePoints">0</span></div></div><div class="bar"><h2>Training</h2><p>Memory: 24 grosse Karten, 12 Logo-Paare im festen 4×6-Feld.</p></div><div class="content games"><button class="tile primary" data-game="logo"><div class="ico">◉</div><strong>Logo-Blitz</strong><small>Logo erkennen</small></button><button class="tile" data-game="country"><div class="ico">⌖</div><strong>Woher?</strong><small>Land zuordnen</small></button><button class="tile" data-game="model"><div class="ico">▰</div><strong>Modell-Check</strong><small>Modell zuordnen</small></button><button class="tile" data-game="memory"><div class="ico">▦</div><strong>Logo-Memory</strong><small>12 Logo-Paare im 4×6-Feld</small></button><button class="tile" data-game="turbo"><div class="ico">⚡</div><strong>Turbo</strong><small>60 Sekunden</small></button><button class="tile truthTile" data-game="truth"><div class="ico">?</div><strong>Wahr oder Auto?</strong><small>Logo-Geheimnisse & verrückte Markenfakten</small></button></div></section>
 
@@ -297,10 +324,10 @@ const BRANDS=[...new Map([...RAW,...EXTRA,...MORE].map(x=>[x[0].toLowerCase(),x]
 const CBL="https://cdn.jsdelivr.net/npm/car-brand-logos@1.0.0/";
 const SI="https://cdn.jsdelivr.net/npm/simple-icons@16.27.1/icons/";
 const WAPI="https://commons.wikimedia.org/w/api.php";
-const SKEY="autoGarage15";
+const SKEY="autoGarage20";
 let state=JSON.parse(localStorage.getItem(SKEY)||"null");
 if(!state){
-  for(const old of ["autoGarage14","autoGarage13","autoGarage12","autoGarage11"]){const o=JSON.parse(localStorage.getItem(old)||"null");if(o){state={points:o.points||0,xp:o.xp||0,learned:o.learned||{},correct:o.correct||{},rewardSeen:Math.floor((o.points||0)/500),photoCache:{}};break}}
+  for(const old of ["autoGarage15","autoGarage14","autoGarage13","autoGarage12","autoGarage11"]){const o=JSON.parse(localStorage.getItem(old)||"null");if(o){state={points:o.points||0,xp:o.xp||0,learned:o.learned||{},correct:o.correct||{},rewardSeen:Math.floor((o.points||0)/500),photoCache:{}};break}}
 }
 state=state||{points:0,xp:0,learned:{},correct:{},rewardSeen:0,photoCache:{}};
 state.photoCache=state.photoCache||{};
@@ -333,41 +360,82 @@ function commonsSearch(query,kind="photo"){
  }).catch(()=>null);
 }
 const LOGO_SLUG={"DS Automobiles":"dsautomobiles","Lynk & Co":"lynkandco","GWM":"greatwallmotor","INEOS":"ineos","KGM":"kgmobility","Rolls-Royce":"rollsroyce","Alfa Romeo":"alfaromeo","Land Rover":"landrover","Aston Martin":"astonmartin","Mercedes-Benz":"mercedes","Mercedes-AMG":"mercedesamg"};
-const OFFICIAL_DOMAINS={"Buick":"buick.com","Peugeot":"peugeot.com","Honda":"honda.com","KGM":"kg-mobility.com","TVR":"tvr.co.uk","Hongqi":"hongqi-auto.com","Leapmotor":"leapmotor.com","GWM":"gwm-global.com","Lynk & Co":"lynkco.com","INEOS":"ineosgrenadier.com"};
+const OFFICIAL_DOMAINS={
+"Buick":"buick.com","Peugeot":"peugeot.com","Honda":"honda.com","KGM":"kg-mobility.com","TVR":"tvr.co.uk",
+"Hongqi":"hongqi-auto.com","Leapmotor":"leapmotor.com","GWM":"gwm-global.com","Lynk & Co":"lynkco.com","INEOS":"ineosgrenadier.com",
+"Zeekr":"zeekrglobal.com","NIO":"nio.com","XPeng":"xpeng.com","BYD":"byd.com","Omoda":"omodaauto.com","Jaecoo":"jaecoo.com",
+"Denza":"denza.com","Avatr":"avatr.com","Xiaomi Auto":"mi.com","Lucid":"lucidmotors.com","Rivian":"rivian.com","Polestar":"polestar.com",
+"Genesis":"genesis.com","Rimac":"rimac-automobili.com","Koenigsegg":"koenigsegg.com","Pagani":"pagani.com","SSC":"sscnorthamerica.com",
+"Hennessey":"hennesseyspecialvehicles.com","Zenvo":"zenvoautomotive.com","Gordon Murray Automotive":"gordonmurrayautomotive.com",
+"Caterham":"caterhamcars.com","Morgan":"morgan-motor.com","BAC":"bac-mono.com","Wiesmann":"wiesmann.com","Donkervoort":"donkervoort.com",
+"Pininfarina":"automobili-pininfarina.com","Saleen":"saleen.com","Smart":"smart.com","Tata":"tatamotors.com","Isuzu":"isuzu.com",
+"Iveco":"iveco.com","Daihatsu":"daihatsu.com","Abarth":"abarth.com","Acura":"acura.com","Alpine":"alpinecars.com","Aston Martin":"astonmartin.com",
+"Bentley":"bentleymotors.com","BMW":"bmw.com","Bugatti":"bugatti.com","Cadillac":"cadillac.com","Chevrolet":"chevrolet.com","Citroën":"citroen.com",
+"Cupra":"cupraofficial.com","Dacia":"dacia.com","Dodge":"dodge.com","Ferrari":"ferrari.com","Fiat":"fiat.com","Ford":"ford.com","Hyundai":"hyundai.com",
+"Infiniti":"infiniti.com","Jaguar":"jaguar.com","Jeep":"jeep.com","Kia":"kia.com","Lamborghini":"lamborghini.com","Land Rover":"landrover.com",
+"Lexus":"lexus.com","Lotus":"lotuscars.com","Maserati":"maserati.com","Mazda":"mazda.com","McLaren":"cars.mclaren.com","Mercedes-Benz":"mercedes-benz.com",
+"MINI":"mini.com","Mitsubishi":"mitsubishi-motors.com","Nissan":"nissan-global.com","Opel":"opel.com","Porsche":"porsche.com","Renault":"renault.com",
+"Rolls-Royce":"rolls-roycemotorcars.com","SEAT":"seat.com","Škoda":"skoda-auto.com","Subaru":"subaru-global.com","Suzuki":"globalsuzuki.com",
+"Tesla":"tesla.com","Toyota":"toyota.com","Volkswagen":"volkswagen.com","Volvo":"volvocars.com"
+};
 const CURATED_LOGOS={
- "BMW":"https://commons.wikimedia.org/wiki/Special:Redirect/file/BMW.svg",
- "Buick":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Buick-logo.svg",
- "Datsun":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Datsun_1976_logo.svg",
- "Honda":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Honda%20Logo.svg",
- "Peugeot":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Peugeot%20Logo.svg",
- "Nissan":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Nissan_logo.svg"
+"BMW":"https://commons.wikimedia.org/wiki/Special:Redirect/file/BMW.svg",
+"Buick":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Buick-logo.svg",
+"Datsun":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Datsun_1976_logo.svg",
+"Honda":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Honda%20Logo.svg",
+"Peugeot":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Peugeot%20Logo.svg",
+"Nissan":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Nissan_logo.svg",
+"Ferrari":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Ferrari-Logo.svg",
+"Mercedes-Benz":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Mercedes-Benz_Star_2022.svg",
+"Volkswagen":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Volkswagen_logo_2019.svg",
+"Porsche":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Porsche_crest.svg"
 };
 function logoUrls(b){
- const si=LOGO_SLUG[b.name]||b.slug;
+ const si=LOGO_SLUG[b.name]||b.slug, domain=OFFICIAL_DOMAINS[b.name];
  const out=[];
- if(CURATED_LOGOS[b.name])out.push(CURATED_LOGOS[b.name]);
+ if(CURATED_LOGOS[b.name]) out.push(CURATED_LOGOS[b.name]);
  out.push(CBL+b.slug+"-logo.svg");
- if(OFFICIAL_DOMAINS[b.name])out.push("https://www.google.com/s2/favicons?sz=256&domain_url=https://"+OFFICIAL_DOMAINS[b.name]);
- out.push(SI+si+".svg");
+ if(domain){
+   out.push("https://www.google.com/s2/favicons?sz=256&domain="+domain);
+   out.push("https://icons.duckduckgo.com/ip3/"+domain+".ico");
+ }
+ out.push("https://cdn.simpleicons.org/"+si);
  return [...new Set(out)]
 }
 function setLogo(img,b){
- const u=logoUrls(b);let i=0;
+ const urls=logoUrls(b); let i=0;
+ img.decoding="async"; img.loading="lazy";
  img.onerror=()=>{
    i++;
-   if(i<u.length){img.src=u[i]}
-   else{img.onerror=null;logoText(img,b)}
+   if(i<urls.length){ img.src=urls[i]; }
+   else { img.onerror=null; logoText(img,b); }
  };
- img.src=u[0];img.alt=b.name+" Logo";
+ img.src=urls[0]; img.alt=b.name+" Logo";
 }
-function logoText(img,b){const box=img.parentElement;if(box){img.remove();const initials=b.name.split(/\s|-/).map(x=>x[0]).join("").slice(0,3).toUpperCase();box.innerHTML=`<div class="logoFallback">${initials}</div>`}}
+function logoText(img,b){
+ const box=img.parentElement;
+ if(!box)return;
+ img.remove();
+ box.innerHTML=`<div class="wordmarkFallback">${b.name}</div>`;
+}
 function logoHTML(b){return `<div class="logoBox"><img data-brand="${b.name.replaceAll('"','&quot;')}" alt="${b.name} Logo"></div>`}
 function hydrate(root=document){root.querySelectorAll("img[data-brand]").forEach(img=>{const b=BRANDS.find(x=>x.name===img.dataset.brand);if(b)setLogo(img,b)})}
 function hud(){
- const learned=Object.values(state.learned).filter(Boolean).length,t=Math.min(Math.floor(state.points/500),REWARDS.length-1);
- $("#topPoints").textContent=state.points;$("#gamePoints").textContent=state.points;$("#learnedN").textContent=learned;$("#lexCount").textContent=learned;$("#lexCount").parentElement.lastChild.textContent="/"+BRANDS.length+" gelernt";$("#rewardN").textContent=t+1;$("#xpN").textContent=state.xp+" XP";
- $("#nextReward").textContent=t>=REWARDS.length-1?"MAX":(t+1)*500;
- drawGarage(t);
+ const learned=Object.values(state.learned).filter(Boolean).length;
+ const tier=Math.min(Math.floor(state.points/500),REWARDS.length-1);
+ const owned=tier+1, total=REWARDS.length;
+ $("#topPoints").textContent=state.points;$("#gamePoints").textContent=state.points;
+ $("#learnedN").textContent=learned;$("#lexCount").textContent=learned;
+ $("#lexCount").parentElement.lastChild.textContent="/"+BRANDS.length+" gelernt";
+ $("#rewardN").textContent=owned+"/"+total;$("#xpN").textContent=state.xp+" XP";
+ const levelNow=$("#rewardLevelNow"),levelTotal=$("#rewardLevelTotal");
+ if(levelNow)levelNow.textContent=owned;if(levelTotal)levelTotal.textContent=total;
+ const into=state.points%500, atMax=tier>=total-1;
+ const bar=$("#rewardProgressBar"),txtp=$("#rewardProgressText"),next=$("#nextRewardText");
+ if(bar)bar.style.width=(atMax?100:(into/500*100))+"%";
+ if(txtp)txtp.textContent=atMax?"Alle Stufen erreicht":into+" / 500 Punkte";
+ if(next)next.textContent=atMax?"Speed-Garage komplett":"Nächstes Auto bei "+((tier+1)*500);
+ drawGarage(tier);
 }
 function drawGarage(t){
  t=Math.min(t,REWARDS.length-1);const r=REWARDS[t];
@@ -409,23 +477,18 @@ function checkReward(){
  if(t>state.rewardSeen){state.rewardSeen=t;localStorage.setItem(SKEY,JSON.stringify(state));shownTier=-1;drawGarage(t);$("#garageView").classList.add("flash");setTimeout(()=>$("#garageView").classList.remove("flash"),800);const r=REWARDS[t];modal("NEUES SPEED-AUTO!",`${r.name} freigeschaltet`,`${r.speed}. Alle 500 Punkte wird die Garage schneller.`)}
 }
 function renderLex(f="",letter=""){
- const g=$("#lexgrid");g.innerHTML="";
- BRANDS.filter(b=>b.name.toLowerCase().includes(f.toLowerCase())&&(!letter||b.name.normalize("NFD").replace(/[\u0300-\u036f]/g,"")[0].toUpperCase()===letter))
- .sort((a,b)=>a.name.localeCompare(b.name,"de"))
- .forEach(b=>{
+ const g=$("#lexgrid"); if(!g)return; g.innerHTML="";
+ const list=BRANDS.filter(b=>b.name.toLowerCase().includes(f.toLowerCase())&&(!letter||b.name.normalize("NFD").replace(/[\u0300-\u036f]/g,"")[0].toUpperCase()===letter))
+ .sort((a,b)=>a.name.localeCompare(b.name,"de"));
+ for(const b of list){
    const c=document.createElement("button");
-   c.type="button";c.className="card";c.dataset.brandName=b.name;
+   c.type="button"; c.className="card";
    c.innerHTML=`<div class="nameBand">${b.name}</div>`+logoHTML(b)+`<div class="cardMeta"><small>${b.flag} ${b.country}</small><small>${b.model}</small>${state.learned[b.name]?'<span class="done">Gelernt ✓</span>':''}</div>`;
-   g.appendChild(c)
- });
- hydrate(g)
+   c.addEventListener("click",()=>openDetail(b),{passive:true});
+   g.appendChild(c);
+ }
+ hydrate(g);
 }
-$("#lexgrid").addEventListener("click",e=>{
- const card=e.target.closest(".card");
- if(!card)return;
- const b=BRANDS.find(x=>x.name===card.dataset.brandName);
- if(b)openDetail(b)
-});
 function openDetail(b){
  current=b;setLogo($("#detailImg"),b);$("#detailFlag").textContent=b.flag+" "+b.country;$("#detailName").textContent=b.name;$("#detailText").textContent=b.text;$("#detailCountry").textContent=b.country;$("#detailModel").textContent=b.model;$("#detailYear").textContent=b.year;$("#detailPS").textContent=b.ps+" PS";$("#detailVmax").textContent=b.vmax;$("#detailLength").textContent=b.length;$("#detailPrice").textContent=b.price;const d=discoveryFor(b);$("#detailLogoSecret").textContent=d[0];$("#detailFun").textContent=d[1];$("#detailFamous").textContent=d[2];$("#detailCult").textContent=d[3];$("#markLearned").textContent=state.learned[b.name]?"Gelernt ✓":"Als gelernt markieren";show("detail")
 }
@@ -440,12 +503,21 @@ function speak(){
 function stopSpeak(){
 const resetBtnV18=$("#resetProgress");
 if(resetBtnV18)resetBtnV18.onclick=resetProgressWithConfirm;
-const speakBtnV18=$("#speak");
-if(speakBtnV18)speakBtnV18.onclick=speak;
-const stopBtnV18=$("#stopSpeak");
-if(stopBtnV18)stopBtnV18.onclick=stopSpeak;
 
+const speakToggle=$("#speakToggle");if(speakToggle)speakToggle.onclick=toggleSpeak;
 if("speechSynthesis"in window)speechSynthesis.cancel()}
+
+function updateSpeakIcon(){
+ const b=$("#speakToggle"); if(!b)return;
+ b.textContent=("speechSynthesis"in window && speechSynthesis.speaking)?"■":"▶";
+ b.classList.toggle("speaking",("speechSynthesis"in window && speechSynthesis.speaking));
+}
+function toggleSpeak(){
+ if(!("speechSynthesis"in window))return;
+ if(speechSynthesis.speaking){speechSynthesis.cancel();updateSpeakIcon();return}
+ speak();
+ setTimeout(updateSpeakIcon,60);
+}
 function mark(){if(!current)return;if(!state.learned[current.name]){state.learned[current.name]=true;state.points+=20;state.xp+=20}save();$("#markLearned").textContent="Gelernt ✓"}
 function pick(){const p=BRANDS.filter(b=>state.learned[b.name]);const pool=p.length>=4?p:BRANDS;return pool[Math.floor(Math.random()*pool.length)]}
 function startGame(type){
@@ -508,20 +580,38 @@ function startMemory(){
  })
 }
 
+const REWARD_PHOTOS={
+"Abarth 695":"https://commons.wikimedia.org/wiki/Special:Redirect/file/2021%20Abarth%20695%20Esseesse.jpg",
+"BMW M3 Competition":"https://commons.wikimedia.org/wiki/Special:Redirect/file/BMW%20M3%20Competition.jpg",
+"Ferrari SF90 Stradale":"https://commons.wikimedia.org/wiki/Special:Redirect/file/FERRARI%20SF90%20Stradale.jpg",
+"Lamborghini Revuelto":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Lamborghini%20Revuelto.jpg",
+"McLaren Speedtail":"https://commons.wikimedia.org/wiki/Special:Redirect/file/McLaren%20Speedtail%20%282020%29%20%2852129090036%29.jpg",
+"Rimac Nevera":"https://commons.wikimedia.org/wiki/Special:Redirect/file/2021%20Rimac%20Nevera.jpg",
+"Koenigsegg Agera RS":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Koenigsegg%20Agera%20RS.JPG",
+"Bugatti Chiron Super Sport 300+":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Bugatti%20Chiron%20Super%20Sport%20300%2B%20-%20Molsheim%202.jpg",
+"Koenigsegg Jesko Absolut":"https://commons.wikimedia.org/wiki/Special:Redirect/file/2024%20Koenigsegg%20Jesko%20Absolut%202.jpg"
+};
 function rewardPhotoFor(r,img){
- img.alt=r.name;const cached=state.photoCache[r.name];if(cached){img.src=cached;return}
- commonsSearch(r.query,"photo").then(url=>{if(url){state.photoCache[r.name]=url;localStorage.setItem(SKEY,JSON.stringify(state));img.src=url}else{img.removeAttribute("src")}})
+ img.alt=r.name;
+ const fixed=REWARD_PHOTOS[r.name];
+ if(fixed){img.src=fixed;return}
+ const cached=state.photoCache?.[r.name];
+ if(cached){img.src=cached;return}
+ commonsSearch(r.query+" exact model","photo").then(url=>{
+   if(url){state.photoCache=state.photoCache||{};state.photoCache[r.name]=url;localStorage.setItem(SKEY,JSON.stringify(state));img.src=url}
+ })
 }
 function renderGarageCollection(){
  const owned=Math.min(Math.floor(state.points/500)+1,REWARDS.length);$("#garageOwned").textContent=owned;const g=$("#rewardGrid");g.innerHTML="";
  REWARDS.slice(0,owned).forEach((r,i)=>{const card=document.createElement("div");card.className="rewardCard";card.innerHTML=`<div class="rewardPhotoBox"><img><span class="speedBadge">${r.speed}</span></div><div class="rewardBody"><b>${r.name}</b><small>${r.note} · freigeschaltet bei ${i*500} Punkten</small></div>`;g.appendChild(card);rewardPhotoFor(r,card.querySelector("img"))})
 }
-function finish(){if(game.timer)clearInterval(game.timer);modal("CHALLENGE GESCHAFFT",game.type==="memory"?"18 Logo-Paare gefunden":game.score+" richtig","Punkte und Erfahrung wurden gespeichert.")}
+function finish(){if(game.timer)clearInterval(game.timer);modal("CHALLENGE GESCHAFFT",game.type==="memory"?"12 Logo-Paare gefunden":game.score+" richtig","Punkte und Erfahrung wurden gespeichert.")}
 
 function resetProgressWithConfirm(){
   const ok=confirm("Bist du sicher? Der gesamte Lernfortschritt, alle Punkte, XP und Garagen-Belohnungen werden gelöscht. Dieser Schritt kann nicht rückgängig gemacht werden.");
   if(!ok)return;
   stopSpeak();
+  localStorage.removeItem("autoGarage20");
   localStorage.removeItem("autoGarage17");
   localStorage.removeItem("autoGarage16");
   localStorage.removeItem("autoGarage15");
@@ -541,7 +631,7 @@ function resetProgressWithConfirm(){
 
 function modal(e,t,x){$("#mEye").textContent=e;$("#mTitle").textContent=t;$("#mText").textContent=x;$("#modal").classList.add("show")}
 $("#openGarageCollection").onclick=()=>{renderGarageCollection();show("garageCollection")};$("#backGarageCollection").onclick=()=>show("home");
-$("#goLex").onclick=()=>{renderLex();show("lexicon")};$("#goGames").onclick=()=>show("games");$$(".homeBack").forEach(b=>b.onclick=()=>{stopSpeak();show("home")});$("#backLex").onclick=()=>{stopSpeak();renderLex($("#search").value);show("lexicon")};$("#search").oninput=e=>{$$(".azbtn").forEach(x=>x.classList.remove("active"));renderLex(e.target.value)};$("#speak").onclick=speak;$("#stopSpeak").onclick=stopSpeak;$("#markLearned").onclick=mark;$$("[data-game]").forEach(b=>b.onclick=()=>startGame(b.dataset.game));$("#backGames").onclick=()=>{if(game.timer)clearInterval(game.timer);show("games")};$("#mOk").onclick=()=>{$("#modal").classList.remove("show");show("games")};$("#mLex").onclick=()=>{$("#modal").classList.remove("show");renderLex();show("lexicon")};
+$("#goLex").onclick=()=>{renderLex();show("lexicon")};$("#goGames").onclick=()=>show("games");$$(".homeBack").forEach(b=>b.onclick=()=>{stopSpeak();show("home")});$("#backLex").onclick=()=>{stopSpeak();renderLex($("#search").value);show("lexicon")};$("#search").oninput=e=>{$$(".azbtn").forEach(x=>x.classList.remove("active"));renderLex(e.target.value)};$("#markLearned").onclick=mark;$$("[data-game]").forEach(b=>b.onclick=()=>startGame(b.dataset.game));$("#backGames").onclick=()=>{if(game.timer)clearInterval(game.timer);show("games")};$("#mOk").onclick=()=>{$("#modal").classList.remove("show");show("games")};$("#mLex").onclick=()=>{$("#modal").classList.remove("show");renderLex();show("lexicon")};
 if("speechSynthesis"in window)speechSynthesis.onvoiceschanged=()=>speechSynthesis.getVoices();
 document.querySelector(".hero .eyebrow").textContent=BRANDS.length+" MARKEN · LOGOS · LERNEN";document.querySelector("#lexicon .bar h2").textContent=BRANDS.length+" Automarken entdecken";hud();renderLex();
 </script>
