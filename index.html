@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#07111b">
-<title>Auto Garage V2.0</title>
+<title>Auto Garage V2.1</title>
 <style>
 :root{--bg:#07111b;--panel:#102236;--panel2:#0b1a2a;--ink:#f7f9fc;--muted:#9fb0c4;--yellow:#ffd34e;--cyan:#59d8ff;--green:#57d79e;--red:#ff7672;--line:rgba(255,255,255,.09)}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif}
@@ -41,7 +41,7 @@ button,input{font:inherit}#rotate{display:none;position:fixed;inset:0;z-index:99
 @media(max-height:390px){.lexgrid{grid-auto-rows:128px}.card{height:128px;grid-template-rows:26px 61px 1fr}.nameBand{font-size:10px}.card .logoBox{height:61px}.rewardPhotoBox{height:88px}}
 
 
-/* V2.0: A-Z, 3D showroom and discovery cards */
+/* V2.1: A-Z, 3D showroom and discovery cards */
 .azbar{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding:3px 0 7px;flex:none}.azbar::-webkit-scrollbar{display:none}.azbtn{min-width:28px;height:27px;border:1px solid var(--line);border-radius:9px;background:linear-gradient(180deg,#1a4770,#123251);color:#fff;font-weight:900;font-size:10px}.azbtn.active{background:linear-gradient(180deg,#66dcff,#2285c3);color:#06121e;box-shadow:0 0 14px rgba(89,216,255,.35)}
 .logoBox{position:relative;background:radial-gradient(circle at 35% 22%,#fff 0,#edf4fb 48%,#c8d4df 100%);box-shadow:inset 0 1px 0 #fff,inset 0 -8px 16px rgba(48,75,98,.13),0 7px 15px rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.78)}.logoBox:before{content:"";position:absolute;inset:4px;border-radius:10px;background:linear-gradient(120deg,rgba(255,255,255,.58),transparent 33%,transparent 70%,rgba(41,108,155,.08));pointer-events:none}.logoBox img{position:relative;z-index:1;filter:drop-shadow(0 4px 4px rgba(16,35,52,.24));width:82%!important;height:82%!important;max-width:82%!important;max-height:82%!important}.detailLogo .logoBox{background:radial-gradient(circle at 34% 25%,#fff,#e8f2fa 55%,#aebfce);box-shadow:inset 0 2px 2px white,inset 0 -14px 28px rgba(20,61,91,.15),0 18px 35px rgba(0,0,0,.28)}
 .discovery{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:9px 0}.discoverCard{border:1px solid var(--line);border-radius:12px;background:linear-gradient(145deg,rgba(31,77,113,.4),rgba(12,31,49,.65));padding:8px;min-height:54px}.discoverCard small{display:block;color:#70dfff;font-size:8px;font-weight:900;text-transform:uppercase;letter-spacing:.8px;margin-bottom:3px}.discoverCard b{display:block;font-size:10px;line-height:1.25}.detailInfo{padding-bottom:18px}
@@ -52,7 +52,7 @@ button,input{font:inherit}#rotate{display:none;position:fixed;inset:0;z-index:99
 </style>
 
 <style>
-/* V2.0 Universal Responsive Edition */
+/* V2.1 Universal Responsive Edition */
 :root{
   --content-max:1600px;
   --logo-card-h:72px;
@@ -140,7 +140,7 @@ button,input{font:inherit}#rotate{display:none;position:fixed;inset:0;z-index:99
 
 
 <style>
-/* V2.0 Garage Edition */
+/* V2.1 Garage Edition */
 .garageHall{
   background:
     linear-gradient(90deg,rgba(4,10,16,.9),rgba(10,25,40,.3) 38%,rgba(4,10,16,.72)),
@@ -231,7 +231,7 @@ button,input{font:inherit}#rotate{display:none;position:fixed;inset:0;z-index:99
 
 
 <style>
-/* V2.0 detail scrolling + reset */
+/* V2.1 detail scrolling + reset */
 .detailInfo{
   overflow-y:auto!important;
   -webkit-overflow-scrolling:touch;
@@ -258,7 +258,7 @@ button,input{font:inherit}#rotate{display:none;position:fixed;inset:0;z-index:99
 
 
 <style>
-/* V2.0 Robust Edition */
+/* V2.1 Robust Edition */
 .speakIcon{
  width:36px;height:36px;border-radius:50%;border:1px solid rgba(89,216,255,.35);
  background:linear-gradient(180deg,#174f77,#0d2e47);color:#fff;font-weight:1000;
@@ -282,19 +282,62 @@ button,input{font:inherit}#rotate{display:none;position:fixed;inset:0;z-index:99
 @media(min-width:1000px){.speakIcon{width:44px;height:44px;font-size:18px}.rewardProgressText{font-size:12px}.rewardProgress{height:9px}}
 </style>
 
+
+<style>
+.lexFilterBar{justify-content:space-between}
+.filterGroup{display:flex;gap:9px;margin-left:auto}
+.filterSelect{
+  appearance:none;-webkit-appearance:none;min-width:165px;
+  border:1px solid rgba(111,205,255,.32);color:#fff;border-radius:12px;
+  padding:9px 34px 9px 12px;font-weight:850;
+  background:
+    linear-gradient(45deg,transparent 50%,#d7f3ff 50%) calc(100% - 16px) 50%/5px 5px no-repeat,
+    linear-gradient(135deg,#d7f3ff 50%,transparent 50%) calc(100% - 11px) 50%/5px 5px no-repeat,
+    linear-gradient(180deg,#2792d3,#15577f);
+}
+.nameBand{
+  background:linear-gradient(135deg,#48b8f4,#1b76b0)!important;color:#fff!important;
+  min-height:34px!important;display:flex!important;align-items:center!important;justify-content:center!important;
+  padding:7px 8px!important;font-size:13px!important;font-weight:1000!important;
+  text-shadow:0 1px 1px rgba(0,0,0,.18)
+}
+.card{min-height:154px!important;padding:0 9px 9px!important;overflow:hidden}
+.card .logoBox{height:94px!important;margin:8px 0 6px!important;padding:8px 10px!important}
+.card .cardMeta{min-height:18px}
+.card .cardMeta small:first-child{font-size:10px!important}
+.card .cardMeta small:nth-child(n+2){display:none!important}
+@media(min-width:1000px){
+ .filterSelect{min-width:210px;font-size:16px;padding:11px 40px 11px 14px}
+ .nameBand{font-size:17px!important;min-height:42px!important}
+ .card{min-height:205px!important}
+ .card .logoBox{height:135px!important}
+ .card .cardMeta small:first-child{font-size:12px!important}
+}
+</style>
+
 </head>
 <body>
-<div id="rotate"><div><div style="font-size:64px;transform:rotate(90deg)">▯</div><h2>Bitte iPhone drehen</h2><p>Auto Garage V2.0 läuft im Querformat.</p></div></div>
+<div id="rotate"><div><div style="font-size:64px;transform:rotate(90deg)">▯</div><h2>Bitte iPhone drehen</h2><p>Auto Garage V2.1 läuft im Querformat.</p></div></div>
 <div id="app">
 <section id="home" class="screen active">
-<div class="top"><div class="brand">AUTO <span>GARAGE</span> <small style="color:var(--muted)">V2.0</small></div><div class="spacer"></div><div class="pill">★ <span id="topPoints">0</span></div></div>
+<div class="top"><div class="brand">AUTO <span>GARAGE</span> <small style="color:var(--muted)">V2.1</small></div><div class="spacer"></div><div class="pill">★ <span id="topPoints">0</span></div></div>
 <div class="home">
 <div class="hero garageHall"><div class="garageSign">AUTO GARAGE ACADEMY</div><div class="eyebrow">128 MARKEN · LOGOS · ENTDECKEN</div><h1>Willkommen<br>in der Garage.</h1><p>Öffne einen Bereich der Werkstatt und starte deine Auto-Mission.</p><div class="actions garageDoors"><button class="cta garageDoorBtn" id="goLex"><span>LEXIKON</span><small>Showroom öffnen</small></button><button class="ghost garageDoorBtn" id="goGames"><span>LERN-GAMES</span><small>Trainingsbox öffnen</small></button></div></div>
 <div class="garage"><div style="display:flex;align-items:center"><strong>Belohnungs-Garage</strong><div class="spacer"></div><button class="garageCollectionBtn" id="openGarageCollection">Meine Sammlung</button><span class="pill"><span id="rewardLevelNow">1</span>/<span id="rewardLevelTotal">11</span> Stufen</span></div><div class="garageView" id="garageView"><img id="rewardPhoto" class="rewardPhoto" alt=""><div class="photoCredit">Foto: Wikimedia Commons</div><div class="tierLabel" id="tierLabel"></div></div><div class="rewardProgressWrap"><div class="rewardProgressText"><span id="rewardProgressText">0 / 500 Punkte</span><span id="nextRewardText">Nächstes Auto bei 500</span></div><div class="rewardProgress"><i id="rewardProgressBar"></i></div></div>
 <div class="stats"><div class="stat"><b id="learnedN">0</b><small>Marken gelernt</small></div><div class="stat"><b id="rewardN">1/11</b><small>Belohnungsstufen</small></div><div class="stat"><b id="xpN">0 XP</b><small>Erfahrung</small></div></div></div>
 </div></section>
 
-<section id="lexicon" class="screen"><div class="top"><button class="back homeBack">‹ Start</button><div class="brand">MARKEN-<span>LEXIKON</span></div><div class="spacer"></div><div class="pill"><span id="lexCount">0</span>/128 gelernt</div></div><div class="bar"><h2>Automarken entdecken</h2><p>Tippe auf Logo oder Namen.</p><input id="search" class="search" placeholder="Marke suchen…"></div><div class="azbar" id="azbar"></div><div class="content"><div class="lexgrid" id="lexgrid"></div></div></section>
+<section id="lexicon" class="screen"><div class="top"><button class="back homeBack">‹ Start</button><div class="brand">MARKEN-<span>LEXIKON</span></div><div class="spacer"></div><div class="pill"><span id="lexCount">0</span>/128 gelernt</div></div><div class="bar lexFilterBar">
+  <h2>Automarken entdecken</h2>
+  <div class="filterGroup">
+    <select id="countryFilter" class="filterSelect" aria-label="Nach Land filtern">
+      <option value="">Alle Länder</option>
+    </select>
+    <select id="letterFilter" class="filterSelect" aria-label="Nach Anfangsbuchstaben filtern">
+      <option value="">A–Z · Alle</option>
+    </select>
+  </div>
+</div><div class="azbar" id="azbar"></div><div class="content"><div class="lexgrid" id="lexgrid"></div></div></section>
 
 <section id="detail" class="screen"><div class="top"><button class="back" id="backLex">‹ Lexikon</button><div class="brand">MARKEN-<span>DETAIL</span></div><div class="spacer"></div><button class="speakIcon" id="speakToggle" aria-label="Vorlesen starten oder stoppen" title="Vorlesen">▶</button></div><div class="detail"><div class="detailLogo"><div class="logoBox"><img id="detailImg"></div><div class="eyebrow" id="detailFlag"></div></div><div class="detailInfo"><div class="eyebrow">AUTOMARKE</div><h2 id="detailName"></h2><p id="detailText"></p><div class="facts" style="grid-template-columns:repeat(4,1fr)">
 <div class="fact"><small>Herkunft</small><b id="detailCountry"></b></div>
@@ -379,6 +422,8 @@ const OFFICIAL_DOMAINS={
 "Tesla":"tesla.com","Toyota":"toyota.com","Volkswagen":"volkswagen.com","Volvo":"volvocars.com"
 };
 const CURATED_LOGOS={
+"Saab":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Saab_wordmark_blue.svg",
+"Rover":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Roverlogotipo.jpg",
 "BMW":"https://commons.wikimedia.org/wiki/Special:Redirect/file/BMW.svg",
 "Buick":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Buick-logo.svg",
 "Datsun":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Datsun_1976_logo.svg",
@@ -476,18 +521,37 @@ function checkReward(){
  const t=Math.min(Math.floor(state.points/500),REWARDS.length-1);
  if(t>state.rewardSeen){state.rewardSeen=t;localStorage.setItem(SKEY,JSON.stringify(state));shownTier=-1;drawGarage(t);$("#garageView").classList.add("flash");setTimeout(()=>$("#garageView").classList.remove("flash"),800);const r=REWARDS[t];modal("NEUES SPEED-AUTO!",`${r.name} freigeschaltet`,`${r.speed}. Alle 500 Punkte wird die Garage schneller.`)}
 }
-function renderLex(f="",letter=""){
+function renderLex(){
  const g=$("#lexgrid"); if(!g)return; g.innerHTML="";
- const list=BRANDS.filter(b=>b.name.toLowerCase().includes(f.toLowerCase())&&(!letter||b.name.normalize("NFD").replace(/[\u0300-\u036f]/g,"")[0].toUpperCase()===letter))
- .sort((a,b)=>a.name.localeCompare(b.name,"de"));
+ const country=$("#countryFilter")?.value||"";
+ const letter=$("#letterFilter")?.value||"";
+ const list=BRANDS.filter(b=>{
+   const first=b.name.normalize("NFD").replace(/[\u0300-\u036f]/g,"")[0].toUpperCase();
+   return (!country||b.country===country)&&(!letter||first===letter);
+ }).sort((a,b)=>a.name.localeCompare(b.name,"de"));
  for(const b of list){
    const c=document.createElement("button");
    c.type="button"; c.className="card";
-   c.innerHTML=`<div class="nameBand">${b.name}</div>`+logoHTML(b)+`<div class="cardMeta"><small>${b.flag} ${b.country}</small><small>${b.model}</small>${state.learned[b.name]?'<span class="done">Gelernt ✓</span>':''}</div>`;
+   c.innerHTML=`<div class="nameBand">${b.name}</div>`+logoHTML(b)+`<div class="cardMeta"><small>${b.flag} ${b.country}</small>${state.learned[b.name]?'<span class="done">Gelernt ✓</span>':''}</div>`;
    c.addEventListener("click",()=>openDetail(b),{passive:true});
    g.appendChild(c);
  }
  hydrate(g);
+}
+function initLexFilters(){
+ const c=$("#countryFilter"),l=$("#letterFilter");
+ if(c&&c.options.length===1){
+   [...new Set(BRANDS.map(b=>b.country))].sort((a,b)=>a.localeCompare(b,"de")).forEach(x=>{
+     const o=document.createElement("option");o.value=x;o.textContent=x;c.appendChild(o)
+   })
+ }
+ if(l&&l.options.length===1){
+   "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").forEach(x=>{
+     const o=document.createElement("option");o.value=x;o.textContent=x;l.appendChild(o)
+   })
+ }
+ c?.addEventListener("change",renderLex);
+ l?.addEventListener("change",renderLex);
 }
 function openDetail(b){
  current=b;setLogo($("#detailImg"),b);$("#detailFlag").textContent=b.flag+" "+b.country;$("#detailName").textContent=b.name;$("#detailText").textContent=b.text;$("#detailCountry").textContent=b.country;$("#detailModel").textContent=b.model;$("#detailYear").textContent=b.year;$("#detailPS").textContent=b.ps+" PS";$("#detailVmax").textContent=b.vmax;$("#detailLength").textContent=b.length;$("#detailPrice").textContent=b.price;const d=discoveryFor(b);$("#detailLogoSecret").textContent=d[0];$("#detailFun").textContent=d[1];$("#detailFamous").textContent=d[2];$("#detailCult").textContent=d[3];$("#markLearned").textContent=state.learned[b.name]?"Gelernt ✓":"Als gelernt markieren";show("detail")
@@ -631,9 +695,9 @@ function resetProgressWithConfirm(){
 
 function modal(e,t,x){$("#mEye").textContent=e;$("#mTitle").textContent=t;$("#mText").textContent=x;$("#modal").classList.add("show")}
 $("#openGarageCollection").onclick=()=>{renderGarageCollection();show("garageCollection")};$("#backGarageCollection").onclick=()=>show("home");
-$("#goLex").onclick=()=>{renderLex();show("lexicon")};$("#goGames").onclick=()=>show("games");$$(".homeBack").forEach(b=>b.onclick=()=>{stopSpeak();show("home")});$("#backLex").onclick=()=>{stopSpeak();renderLex($("#search").value);show("lexicon")};$("#search").oninput=e=>{$$(".azbtn").forEach(x=>x.classList.remove("active"));renderLex(e.target.value)};$("#markLearned").onclick=mark;$$("[data-game]").forEach(b=>b.onclick=()=>startGame(b.dataset.game));$("#backGames").onclick=()=>{if(game.timer)clearInterval(game.timer);show("games")};$("#mOk").onclick=()=>{$("#modal").classList.remove("show");show("games")};$("#mLex").onclick=()=>{$("#modal").classList.remove("show");renderLex();show("lexicon")};
+$("#goLex").onclick=()=>{renderLex();show("lexicon")};$("#goGames").onclick=()=>show("games");$$(".homeBack").forEach(b=>b.onclick=()=>{stopSpeak();show("home")});$("#backLex").onclick=()=>{stopSpeak();renderLex();show("lexicon")};renderLex(e.target.value)};$("#markLearned").onclick=mark;$$("[data-game]").forEach(b=>b.onclick=()=>startGame(b.dataset.game));$("#backGames").onclick=()=>{if(game.timer)clearInterval(game.timer);show("games")};$("#mOk").onclick=()=>{$("#modal").classList.remove("show");show("games")};$("#mLex").onclick=()=>{$("#modal").classList.remove("show");renderLex();show("lexicon")};
 if("speechSynthesis"in window)speechSynthesis.onvoiceschanged=()=>speechSynthesis.getVoices();
-document.querySelector(".hero .eyebrow").textContent=BRANDS.length+" MARKEN · LOGOS · LERNEN";document.querySelector("#lexicon .bar h2").textContent=BRANDS.length+" Automarken entdecken";hud();renderLex();
+document.querySelector(".hero .eyebrow").textContent=BRANDS.length+" MARKEN · LOGOS · LERNEN";document.querySelector("#lexicon .bar h2").textContent=BRANDS.length+" Automarken entdecken";hud();initLexFilters();renderLex();
 </script>
 </body>
 </html>
