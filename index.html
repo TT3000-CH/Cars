@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#07111b">
-<title>Auto Garage V2.3.1</title>
+<title>Auto Garage V2.3.2</title>
 <style>
 :root{--bg:#07111b;--panel:#102236;--panel2:#0b1a2a;--ink:#f7f9fc;--muted:#9fb0c4;--yellow:#ffd34e;--cyan:#59d8ff;--green:#57d79e;--red:#ff7672;--line:rgba(255,255,255,.09)}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif}
@@ -41,7 +41,7 @@ button,input{font:inherit}#rotate{display:none;position:fixed;inset:0;z-index:99
 @media(max-height:390px){.lexgrid{grid-auto-rows:128px}.card{height:128px;grid-template-rows:26px 61px 1fr}.nameBand{font-size:10px}.card .logoBox{height:61px}.rewardPhotoBox{height:88px}}
 
 
-/* V2.3.1: A-Z, 3D showroom and discovery cards */
+/* V2.3.2: A-Z, 3D showroom and discovery cards */
 .azbar{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding:3px 0 7px;flex:none}.azbar::-webkit-scrollbar{display:none}.azbtn{min-width:28px;height:27px;border:1px solid var(--line);border-radius:9px;background:linear-gradient(180deg,#1a4770,#123251);color:#fff;font-weight:900;font-size:10px}.azbtn.active{background:linear-gradient(180deg,#66dcff,#2285c3);color:#06121e;box-shadow:0 0 14px rgba(89,216,255,.35)}
 .logoBox{position:relative;background:radial-gradient(circle at 35% 22%,#fff 0,#edf4fb 48%,#c8d4df 100%);box-shadow:inset 0 1px 0 #fff,inset 0 -8px 16px rgba(48,75,98,.13),0 7px 15px rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.78)}.logoBox:before{content:"";position:absolute;inset:4px;border-radius:10px;background:linear-gradient(120deg,rgba(255,255,255,.58),transparent 33%,transparent 70%,rgba(41,108,155,.08));pointer-events:none}.logoBox img{position:relative;z-index:1;filter:drop-shadow(0 4px 4px rgba(16,35,52,.24));width:82%!important;height:82%!important;max-width:82%!important;max-height:82%!important}.detailLogo .logoBox{background:radial-gradient(circle at 34% 25%,#fff,#e8f2fa 55%,#aebfce);box-shadow:inset 0 2px 2px white,inset 0 -14px 28px rgba(20,61,91,.15),0 18px 35px rgba(0,0,0,.28)}
 .discovery{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:9px 0}.discoverCard{border:1px solid var(--line);border-radius:12px;background:linear-gradient(145deg,rgba(31,77,113,.4),rgba(12,31,49,.65));padding:8px;min-height:54px}.discoverCard small{display:block;color:#70dfff;font-size:8px;font-weight:900;text-transform:uppercase;letter-spacing:.8px;margin-bottom:3px}.discoverCard b{display:block;font-size:10px;line-height:1.25}.detailInfo{padding-bottom:18px}
@@ -52,7 +52,7 @@ button,input{font:inherit}#rotate{display:none;position:fixed;inset:0;z-index:99
 </style>
 
 <style>
-/* V2.3.1 Universal Responsive Edition */
+/* V2.3.2 Universal Responsive Edition */
 :root{
   --content-max:1600px;
   --logo-card-h:72px;
@@ -140,7 +140,7 @@ button,input{font:inherit}#rotate{display:none;position:fixed;inset:0;z-index:99
 
 
 <style>
-/* V2.3.1 Garage Edition */
+/* V2.3.2 Garage Edition */
 .garageHall{
   background:
     linear-gradient(90deg,rgba(4,10,16,.9),rgba(10,25,40,.3) 38%,rgba(4,10,16,.72)),
@@ -231,7 +231,7 @@ button,input{font:inherit}#rotate{display:none;position:fixed;inset:0;z-index:99
 
 
 <style>
-/* V2.3.1 detail scrolling + reset */
+/* V2.3.2 detail scrolling + reset */
 .detailInfo{
   overflow-y:auto!important;
   -webkit-overflow-scrolling:touch;
@@ -258,7 +258,7 @@ button,input{font:inherit}#rotate{display:none;position:fixed;inset:0;z-index:99
 
 
 <style>
-/* V2.3.1 Robust Edition */
+/* V2.3.2 Robust Edition */
 .speakIcon{
  width:36px;height:36px;border-radius:50%;border:1px solid rgba(89,216,255,.35);
  background:linear-gradient(180deg,#174f77,#0d2e47);color:#fff;font-weight:1000;
@@ -317,7 +317,7 @@ button,input{font:inherit}#rotate{display:none;position:fixed;inset:0;z-index:99
 
 
 <style>
-/* V2.3.1 navigation + detail swipe */
+/* V2.3.2 navigation + detail swipe */
 #goLex,#goGames{position:relative;z-index:20;pointer-events:auto!important}
 .hero.garageHall .actions{pointer-events:auto!important}
 .hero.garageHall:before{pointer-events:none!important}
@@ -340,7 +340,7 @@ button,input{font:inherit}#rotate{display:none;position:fixed;inset:0;z-index:99
 
 
 <style>
-/* V2.3.1 – five curated logos only */
+/* V2.3.2 – five curated logos only */
 .logoBox img.logoAvatr{
   width:72%!important;height:72%!important;
   max-width:72%!important;max-height:72%!important;
@@ -373,12 +373,30 @@ button,input{font:inherit}#rotate{display:none;position:fixed;inset:0;z-index:99
 }
 </style>
 
+
+<style>
+/* V2.3.2 targeted logo fixes */
+.logoBox img.logoWideBrand{
+ width:90%!important;height:68%!important;max-width:90%!important;max-height:68%!important;
+ object-fit:contain!important;object-position:center!important;display:block!important;margin:auto!important;padding:0!important
+}
+.logoBox img.logoBadgeBrand{
+ width:76%!important;height:76%!important;max-width:76%!important;max-height:76%!important;
+ object-fit:contain!important;object-position:center!important;display:block!important;margin:auto!important;padding:0!important
+}
+.logoBox img.logoSmallSource{
+ width:68%!important;height:68%!important;max-width:68%!important;max-height:68%!important;
+ object-fit:contain!important;object-position:center!important;display:block!important;margin:auto!important;
+ image-rendering:auto!important
+}
+</style>
+
 </head>
 <body>
-<div id="rotate"><div><div style="font-size:64px;transform:rotate(90deg)">▯</div><h2>Bitte iPhone drehen</h2><p>Auto Garage V2.3.1 läuft im Querformat.</p></div></div>
+<div id="rotate"><div><div style="font-size:64px;transform:rotate(90deg)">▯</div><h2>Bitte iPhone drehen</h2><p>Auto Garage V2.3.2 läuft im Querformat.</p></div></div>
 <div id="app">
 <section id="home" class="screen active">
-<div class="top"><div class="brand">AUTO <span>GARAGE</span> <small style="color:var(--muted)">V2.3.1</small></div><div class="spacer"></div><div class="pill">★ <span id="topPoints">0</span></div></div>
+<div class="top"><div class="brand">AUTO <span>GARAGE</span> <small style="color:var(--muted)">V2.3.2</small></div><div class="spacer"></div><div class="pill">★ <span id="topPoints">0</span></div></div>
 <div class="home">
 <div class="hero garageHall"><div class="garageSign">AUTO GARAGE ACADEMY</div><div class="eyebrow">128 MARKEN · LOGOS · ENTDECKEN</div><h1>Willkommen<br>in der Garage.</h1><p>Öffne einen Bereich der Werkstatt und starte deine Auto-Mission.</p><div class="actions garageDoors"><button class="cta garageDoorBtn" id="goLex"><span>LEXIKON</span><small>Showroom öffnen</small></button><button class="ghost garageDoorBtn" id="goGames"><span>LERN-GAMES</span><small>Trainingsbox öffnen</small></button></div></div>
 <div class="garage"><div style="display:flex;align-items:center"><strong>Belohnungs-Garage</strong><div class="spacer"></div><button class="garageCollectionBtn" id="openGarageCollection">Meine Sammlung</button><span class="pill"><span id="rewardLevelNow">1</span>/<span id="rewardLevelTotal">11</span> Stufen</span></div><div class="garageView" id="garageView"><img id="rewardPhoto" class="rewardPhoto" alt=""><div class="photoCredit">Foto: Wikimedia Commons</div><div class="tierLabel" id="tierLabel"></div></div><div class="rewardProgressWrap"><div class="rewardProgressText"><span id="rewardProgressText">0 / 500 Punkte</span><span id="nextRewardText">Nächstes Auto bei 500</span></div><div class="rewardProgress"><i id="rewardProgressBar"></i></div></div>
@@ -480,6 +498,30 @@ const OFFICIAL_DOMAINS={
 "Tesla":"tesla.com","Toyota":"toyota.com","Volkswagen":"volkswagen.com","Volvo":"volvocars.com"
 };
 const CURATED_LOGOS={
+"VinFast":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Vinfast_logo.svg",
+"Zastava":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Yugo-logo.svg",
+"Tata":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Tata_Motors_Logo.svg",
+"Subaru":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Subaru_logo.svg",
+"Spyker":"https://www.google.com/s2/favicons?sz=256&domain=spykercars.com",
+"Scion":"https://www.google.com/s2/favicons?sz=256&domain=toyota.com",
+"Renault":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Renault_logo.jpg",
+"Plymouth":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Plymouth_logo_1994.png",
+"Pontiac":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Pontiac_automobile_logo.png",
+"Perodua":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Perodua_Logo_(2008_-_Present).svg",
+"Oldsmobile":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Oldsmobile_logo.jpg",
+"Noble":"https://www.google.com/s2/favicons?sz=256&domain=noblecars.com",
+"Moskvich":"https://www.google.com/s2/favicons?sz=256&domain=moskvich-auto.ru",
+"Mercury":"https://www.google.com/s2/favicons?sz=256&domain=mercuryvehicles.com",
+"Maybach":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Maybach-Logo.svg",
+"Lancia":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Lancia_Logo_2023.svg",
+"KGM":"https://www.google.com/s2/favicons?sz=256&domain=kg-mobility.com",
+"JAC":"https://commons.wikimedia.org/wiki/Special:Redirect/file/New_Jac_motors_logo.png",
+"Iveco":"https://commons.wikimedia.org/wiki/Special:Redirect/file/IVECO_logo.jpg",
+"Hongqi":"https://www.google.com/s2/favicons?sz=256&domain=hongqi-auto.com",
+"GMC":"https://commons.wikimedia.org/wiki/Special:Redirect/file/GMC-Logo.svg",
+"Fisker":"https://www.google.com/s2/favicons?sz=256&domain=fiskerinc.com",
+"Exeed":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Exeed_logo.png",
+"Cadillac":"https://cdn.simpleicons.org/cadillac",
 "DeLorean":"https://commons.wikimedia.org/wiki/Special:Redirect/file/DeLorean_Motor_Company_logo.svg",
 "Chery":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Chery_logo.svg",
 "Avatr":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Avatr_Technology_logo.svg",
@@ -522,6 +564,9 @@ function setLogo(img,b){
  img.classList.toggle("logoVW3D",b.name==="Volkswagen");
  img.classList.toggle("logoChery",b.name==="Chery");
  img.classList.toggle("logoDeLorean",b.name==="DeLorean");
+ img.classList.toggle("logoWideBrand",["Exeed","GMC","Iveco","Lancia","Maybach","Tata","VinFast"].includes(b.name));
+ img.classList.toggle("logoBadgeBrand",["Cadillac","Hongqi","JAC","KGM","Oldsmobile","Perodua","Pontiac","Plymouth","Renault","Subaru","Zastava"].includes(b.name));
+ img.classList.toggle("logoSmallSource",["Fisker","Mercury","Moskvich","Noble","Scion","Spyker"].includes(b.name));
  img.src=urls[0]; img.alt=b.name+" Logo";
 }
 function logoText(img,b){
